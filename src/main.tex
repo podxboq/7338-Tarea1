@@ -1,0 +1,40 @@
+%! Author = podxboq
+%! Date = 12/09/2022
+
+% Preamble
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{imakeidx}
+\input{personalizacion.tex}
+\setmainfont{Calibri}
+\renewcommand{\baselinestretch}{1.5}
+% Document
+\makeindex
+\begin{document}
+    \title{La importancia de las simetrías en física}
+    \author{Francisco Costa y Francisco Vidal}
+    \date{Septiembre 2022}
+    \maketitle
+    \tableofcontents
+    \begin{abstract}
+        Este es un breve resumen del contenido del
+        documento escrito en español.
+    \end{abstract}
+
+    \include{intro}
+    \include{mecanica_lagrangiana}
+    \include{teorema_noether}
+    \include{conservaciones_clasicas}
+
+    \bibliography{main}
+    \bibliographystyle{plain}
+
+    \printindex
+\end{document}

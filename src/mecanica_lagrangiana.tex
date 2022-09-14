@@ -1,0 +1,69 @@
+\chapter{Mecánica Lagrangiana}
+\section{El lagrangiano del sistema}
+
+La mecánica lagrangiana es una reformulación de la mecánica Newtoniana, introducida por Joseph-Louis de Lagrange en 1788, donde para cada partícula del sistema se considera su posición y velocidad como variables, definiendo así un espacio de fases de 6N+1 dimensiones, donde N es el número de partículas y 6=3+3 son 3 dimensiones para la posición y 3 dimensiones para la velocidad y +1 para el tiempo.
+
+Sobre este espacio de fases se define el lagrangiano ($L$), que es una aplicación escalar que se forma mediante la energía cinética ($T$) y la energía potencial ($V$) de tal manera que:
+\begin{equation}
+	\label{eq:lagrangiano_clasico}
+	L(\vec{r_1},\dots,\vec{r_N},\dot{\vec{r_1}},\dots,\dot{\vec{r_N}},t)=T-V=\sum\limits_{i=1}^{i=N} \frac{1}{2}m\|\dot{\vec{r_i}}\|^2-V(\vec{r_i},t)
+\end{equation}
+
+\section{Acción de un funcional}
+	Sea $\maps{L}{\R^n\times\R^n\times\R}{\R}$ una aplicación real y $\maps{\alpha}{I=[t_0, t_1]}{\R^n}$ una función real, definimos el funcional \define{acción de L}{acción} a:
+	\begin{equation}
+		\label{eq:accion}
+		S_L(\alpha) = \int_{I}L(\alpha(t), \dot{\alpha}(t), t)\ dt
+	\end{equation}
+
+\begin{proposition}
+	En los términos de la definición~\eqref{eq:accion}, el funcional $S_L$ es diferenciable en $\alpha$ y su valor es
+	\begin{equation}
+		\label{eq:accion_diferencial}
+		dS_L(\alpha)(h)=\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	Por la definición de diferencial y realizando el desarrollo de Taylor tenemos que
+	\begin{equation*}
+		\begin{split}
+			S_L(\alpha + h) -  S_L(\alpha)& = \int_{I}L(\alpha(t)+h(t), \dot{\alpha}(t)+\dot{h}(t), t)\ dt - \int_{I}L(\alpha(t), \dot{\alpha}(t), t)\ dt =\\
+			&\by{\ref{eq:polinomio-taylor-dos-variables}}\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right)\ dt+\mathcal{O}(h^2)\so\\
+			dS_L(\alpha)(h) &=\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt
+		\end{split}
+	\end{equation*}
+\end{proof}
+
+\section{Ecuación de Euler-Lagrange}
+
+\begin{theorem}
+	Una función real $\alpha$ alcanza un valor extremo (máximo o mínimo) en el funcional $S_L$ sí y sólo sí se da la siguiente igualdad llamada \define{ecuación de Euler-Lagrange}{Ecuación de Euler-Lagrange}
+	\begin{equation}
+		\label{eq:euler-lagrange}
+		\frac{\partial L}{\partial \alpha}=\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	Una función alcanza un valor máximo o mínimo en el funcional $S_L$ cuando su diferencial se hace cero, es decir, que $dS_L(\alpha)(h)=0$ para cualquier función $h$.
+	\begin{equation*}
+		\begin{split}
+			0 = dS_L(\alpha)(h) &\by{\ref{eq:accion_diferencial}}\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt = \int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}}h \right)-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)h\right)\ dt = \\
+			& = \int_{I}\left( \frac{\partial L}{\partial \alpha}h-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)h\right)\ dt +\int_{I}\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}}h \right)\ dt = \\
+			& =\int_I\left( \frac{\partial L}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)\right)h\ dt + \left[ \frac{\partial L}{\partial \dot{\alpha}}h \right]_{t_0}^{t_1}
+		\end{split}
+	\end{equation*}
+	En particular si nos restringimos a las funciones $h$ que cumplen $h(t_0)=0=h(t_1)$, el segundo sumando vale $0$ y el para el primer sumando tenemos que
+	\begin{equation*}
+		\int_{I}\left( \frac{\partial L}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)\right)h\ dt = 0 \so \frac{\partial L}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right) = 0
+	\end{equation*}
+\end{proof}
+
+\begin{definition}
+	Llamaremos \define{trayectoria}{Trayectoria} \index{Trayectoria} a la función que cumplen la ecuación de Euler-Lagrange~\eqref{eq:euler-lagrange}.
+\end{definition}
+
+\section{Principio de mínima acción}
+
+El principio de mínima acción o principio de Hamilton, es un postulado básico de la física para describir la evolución a lo largo del tiempo del estado de movimiento de una partícula.
+
+El \textbf{principio de mínima acción} o \textbf{principio de Hamilton}, dice que las partículas se mueven a traves de trayectorias que minimizan la acción del lagrangiano.

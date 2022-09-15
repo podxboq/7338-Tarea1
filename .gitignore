@@ -3,3 +3,10 @@
 /out
 /auxil
 7338-Tarea1.iml
+main.aux
+main.fdb_latexmk
+main.fls
+main.ilg
+main.log
+main.pdf
+main.xdv

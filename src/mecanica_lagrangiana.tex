@@ -1,7 +1,8 @@
-\chapter{Mecánica Lagrangiana}
-\section{El lagrangiano del sistema}
+\chapter{Mecánica Lagrangiana}\label{ch:mecanica-lagrangiana}
 
-La mecánica lagrangiana es una reformulación de la mecánica Newtoniana, introducida por Joseph-Louis de Lagrange en 1788, donde para cada partícula del sistema se considera su posición y velocidad como variables, definiendo así un espacio de fases de 6N+1 dimensiones, donde N es el número de partículas y 6=3+3 son 3 dimensiones para la posición y 3 dimensiones para la velocidad y +1 para el tiempo.
+\section{El lagrangiano del sistema}\label{sec:el-lagrangiano-del-sistema}
+
+La mecánica lagrangiana es una reformulación de la mecánica Newtoniana, introducida por Joseph-Louis de Lagrange en 1788, donde para cada partícula del sistema se considera su posición y velocidad como variables, así para $N$ partículas,  definiendo así un espacio de fases de 6N+1 dimensiones, donde N es el número de partículas y 6=3+3 son 3 dimensiones para la posición y 3 dimensiones para la velocidad y +1 para el tiempo.
 
 Sobre este espacio de fases se define el lagrangiano ($L$), que es una aplicación escalar que se forma mediante la energía cinética ($T$) y la energía potencial ($V$) de tal manera que:
 \begin{equation}
@@ -9,12 +10,14 @@ Sobre este espacio de fases se define el lagrangiano ($L$), que es una aplicaci�
 	L(\vec{r_1},\dots,\vec{r_N},\dot{\vec{r_1}},\dots,\dot{\vec{r_N}},t)=T-V=\sum\limits_{i=1}^{i=N} \frac{1}{2}m\|\dot{\vec{r_i}}\|^2-V(\vec{r_i},t)
 \end{equation}
 
-\section{Acción de un funcional}
-	Sea $\maps{L}{\R^n\times\R^n\times\R}{\R}$ una aplicación real y $\maps{\alpha}{I=[t_0, t_1]}{\R^n}$ una función real, definimos el funcional \define{acción de L}{acción} a:
-	\begin{equation}
-		\label{eq:accion}
-		S_L(\alpha) = \int_{I}L(\alpha(t), \dot{\alpha}(t), t)\ dt
-	\end{equation}
+\section{integral de acción}\label{sec:integral-de-accion}
+
+Un concepto muy importante en mecánica, asociado al Lagrangiano $L$, es el de \define{integral de acción} o simplemente \define{acción}, que es un valor numérico calculado a través de la integral sobre el tiempo entre dos momentos.
+Si $\maps{\alpha}{I=[t_0, t_1]}{\R^3}$ es una función que representa el movimiento de una partícula, la acción se define como
+\begin{equation}
+	\label{eq:accion}
+	S_L(\alpha) = \int_{I}L(\alpha(t), \dot{\alpha}(t), t)\ dt
+\end{equation}
 
 \begin{proposition}
 	En los términos de la definición~\eqref{eq:accion}, el funcional $S_L$ es diferenciable en $\alpha$ y su valor es
@@ -24,17 +27,29 @@ Sobre este espacio de fases se define el lagrangiano ($L$), que es una aplicaci�
 	\end{equation}
 \end{proposition}
 \begin{proof}
-	Por la definición de diferencial y realizando el desarrollo de Taylor tenemos que
+	Por la definición de diferencial tenemos que para cualquier funcion $h$
+	\begin{equation*}
+			S_L(\alpha + h) -  S_L(\alpha) = dS_L(\alpha)(h) +\mathcal{O}(h^2)
+	\end{equation*}
+	Por otra parte y por la definición de la acción
 	\begin{equation*}
 		\begin{split}
-			S_L(\alpha + h) -  S_L(\alpha)& = \int_{I}L(\alpha(t)+h(t), \dot{\alpha}(t)+\dot{h}(t), t)\ dt - \int_{I}L(\alpha(t), \dot{\alpha}(t), t)\ dt =\\
-			&\by{\ref{eq:polinomio-taylor-dos-variables}}\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right)\ dt+\mathcal{O}(h^2)\so\\
-			dS_L(\alpha)(h) &=\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt
+			S_L(\alpha + h) -  S_L(\alpha) = & \int_{I}L(\alpha(t)+h(t), \dot{\alpha}(t)+\dot{h}(t), t)\ dt - \\
+			- & \int_{I}L(\alpha(t), \dot{\alpha}(t), t)\ dt =\\
+			=& \int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right)\ dt+\mathcal{O}(h^2)
 		\end{split}
 	\end{equation*}
+
+	Donde en la última igualdad hemos usado el desarrollo de Taylor en una variable.
+	Por lo tanto, por la unicidad de diferencial de funciones, tenemos que:
+
+	\begin{equation*}
+			dS_L(\alpha)(h) =\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt
+	\end{equation*}
+
 \end{proof}
 
-\section{Ecuación de Euler-Lagrange}
+\section{Ecuación de Euler-Lagrange}\label{sec:ecuacion-de-euler-lagrange}
 
 \begin{theorem}
 	Una función real $\alpha$ alcanza un valor extremo (máximo o mínimo) en el funcional $S_L$ sí y sólo sí se da la siguiente igualdad llamada \define{ecuación de Euler-Lagrange}{Ecuación de Euler-Lagrange}
@@ -47,9 +62,10 @@ Sobre este espacio de fases se define el lagrangiano ($L$), que es una aplicaci�
 	Una función alcanza un valor máximo o mínimo en el funcional $S_L$ cuando su diferencial se hace cero, es decir, que $dS_L(\alpha)(h)=0$ para cualquier función $h$.
 	\begin{equation*}
 		\begin{split}
-			0 = dS_L(\alpha)(h) &\by{\ref{eq:accion_diferencial}}\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt = \int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}}h \right)-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)h\right)\ dt = \\
-			& = \int_{I}\left( \frac{\partial L}{\partial \alpha}h-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)h\right)\ dt +\int_{I}\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}}h \right)\ dt = \\
-			& =\int_I\left( \frac{\partial L}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)\right)h\ dt + \left[ \frac{\partial L}{\partial \dot{\alpha}}h \right]_{t_0}^{t_1}
+			0 = dS_L(\alpha)(h)~\by{\ref{eq:accion_diferencial}}&\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt =\\
+			= & \int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}}h \right)-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)h\right)\ dt = \\
+			= & \int_{I}\left( \frac{\partial L}{\partial \alpha}h-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)h\right)\ dt +\int_{I}\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}}h \right)\ dt = \\
+			= & \int_I\left( \frac{\partial L}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)\right)h\ dt + \left[ \frac{\partial L}{\partial \dot{\alpha}}h \right]_{t_0}^{t_1}
 		\end{split}
 	\end{equation*}
 	En particular si nos restringimos a las funciones $h$ que cumplen $h(t_0)=0=h(t_1)$, el segundo sumando vale $0$ y el para el primer sumando tenemos que

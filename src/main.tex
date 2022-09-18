@@ -3,7 +3,7 @@
 
 
 % Preamble
-\documentclass[12pt]{article}
+\documentclass[12pt]{report}
 
 % Packages
 \usepackage[T1]{fontenc}
@@ -13,6 +13,9 @@
 \usepackage{amssymb}
 \usepackage{fontspec}
 \usepackage{imakeidx}
+\usepackage[backend=biber, isbn=false, doi=false]{biblatex-chicago}
+\bibliography{main}
+\usepackage{cite}
 \input{personalizacion.tex}
 \setmainfont{Carlito}
 \renewcommand{\baselinestretch}{1.5}
@@ -31,12 +34,15 @@
 
     \include{intro}
     \include{mecanica_lagrangiana}
+    \include{bio_noether}
     \include{teorema_noether}
     \include{conservaciones_clasicas}
     \include{conservaciones_quanticas}
 
+    \center{Bibliography}
+    \printbibliography[heading=none]
     \bibliography{main}
-    \bibliographystyle{plain}
+    \bibliographystyle{chicago}
 
     \printindex
 \end{document}

@@ -2,41 +2,45 @@
 
 \section{El lagrangiano del sistema}\label{sec:el-lagrangiano-del-sistema}
 
-La mecánica lagrangiana es una reformulación de la mecánica Newtoniana, introducida por Joseph-Louis de Lagrange en 1788, donde para cada partícula del sistema se considera su posición y velocidad como variables, así para $N$ partículas,  definiendo así un espacio de fases de 6N+1 dimensiones, donde N es el número de partículas y 6=3+3 son 3 dimensiones para la posición y 3 dimensiones para la velocidad y +1 para el tiempo.
+La mecánica lagrangiana es una reformulación de la mecánica Newtoniana, introducida por Joseph-Louis de Lagrange en 1788, donde para cada partícula del sistema se consideran los valores que definen su posición, dichos valores reciben el nombre de \define{coordenadas generalizadas}{Coordenadas generalizadas}.
+Llamamos \define{velocidades generalizadas}{Velocidades generalizadas} a la derivada respecto del tiempo de las coordenadas generalizadas.
 
-Sobre este espacio de fases se define el lagrangiano ($L$), que es una aplicación escalar que se forma mediante la energía cinética ($T$) y la energía potencial ($V$) de tal manera que:
+En un sistema de $N$ partículas, tendremos para cada partícula, $n$ coordenadas generalizadas, denotamos por $q_i\ i=1\dots N$ al vector formado por las coordenadas generalizadas de cada partícula y por $q=(q_1,\dots,q_N)$ al vector de las coordenadas generalidas del sistema.
+Observamos que la dimensión de $q$ es $nN$.
+
+Se define el \define{lagrangiano}{Lagrangiano} $\lagrangiano$, como la aplicación escalar que se forma mediante la energía cinética ($T$) y la energía potencial ($V$) de tal manera que:
 \begin{equation}
 	\label{eq:lagrangiano_clasico}
-	L(\vec{r_1},\dots,\vec{r_N},\dot{\vec{r_1}},\dots,\dot{\vec{r_N}},t)=T-V=\sum\limits_{i=1}^{i=N} \frac{1}{2}m\|\dot{\vec{r_i}}\|^2-V(\vec{r_i},t)
+	\lagrangiano(q,\dot{q},t)=T-V=\sum\limits_{i=1}^{N} \frac{1}{2}m\|\dot{q_i}\|^2-V(q_i,t)
 \end{equation}
 
 \section{integral de acción}\label{sec:integral-de-accion}
 
-Un concepto muy importante en mecánica, asociado al Lagrangiano $L$, es el de \define{integral de acción} o simplemente \define{acción}, que es un valor numérico calculado a través de la integral sobre el tiempo entre dos momentos.
+Un concepto muy importante en mecánica, asociado al Lagrangiano $\lagrangiano$, es el de \define{integral de acción}{Integral de acción} o simplemente \define{acción}{Acción}, que es un valor numérico calculado a través de la integral del lagrangiano sobre el tiempo entre dos instantes.
 Si $\maps{\alpha}{I=[t_0, t_1]}{\R^3}$ es una función que representa el movimiento de una partícula, la acción se define como
 \begin{equation}
 	\label{eq:accion}
-	S_L(\alpha) = \int_{I}L(\alpha(t), \dot{\alpha}(t), t)\ dt
+	S_\lagrangiano(\alpha) = \int_{I}\lagrangiano(\alpha(t), \dot{\alpha}(t), t)\ dt
 \end{equation}
 
 \begin{proposition}
-	En los términos de la definición~\eqref{eq:accion}, el funcional $S_L$ es diferenciable en $\alpha$ y su valor es
+	En los términos de la definición~\eqref{eq:accion}, el funcional $S_\lagrangiano$ es diferenciable en $\alpha$ y su valor es
 	\begin{equation}
 		\label{eq:accion_diferencial}
-		dS_L(\alpha)(h)=\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt
+		dS_\lagrangiano(\alpha)(h)=\int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}h+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\dot{h}\right) dt
 	\end{equation}
 \end{proposition}
 \begin{proof}
 	Por la definición de diferencial tenemos que para cualquier funcion $h$
 	\begin{equation*}
-			S_L(\alpha + h) -  S_L(\alpha) = dS_L(\alpha)(h) +\mathcal{O}(h^2)
+		S_\lagrangiano(\alpha + h) -  S_\lagrangiano(\alpha) = dS_\lagrangiano(\alpha)(h) +\mathcal{O}(h^2)
 	\end{equation*}
 	Por otra parte y por la definición de la acción
 	\begin{equation*}
 		\begin{split}
-			S_L(\alpha + h) -  S_L(\alpha) = & \int_{I}L(\alpha(t)+h(t), \dot{\alpha}(t)+\dot{h}(t), t)\ dt - \\
-			- & \int_{I}L(\alpha(t), \dot{\alpha}(t), t)\ dt =\\
-			=& \int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right)\ dt+\mathcal{O}(h^2)
+			S_\lagrangiano(\alpha + h) -  S_\lagrangiano(\alpha) = & \int_{I}\lagrangiano(\alpha(t)+h(t), \dot{\alpha}(t)+\dot{h}(t), t)\ dt - \\
+			- & \int_{I}\lagrangiano(\alpha(t), \dot{\alpha}(t), t)\ dt =\\
+			=& \int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}h+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\dot{h}\right)\ dt+\mathcal{O}(h^2)
 		\end{split}
 	\end{equation*}
 
@@ -44,7 +48,7 @@ Si $\maps{\alpha}{I=[t_0, t_1]}{\R^3}$ es una función que representa el movimie
 	Por lo tanto, por la unicidad de diferencial de funciones, tenemos que:
 
 	\begin{equation*}
-			dS_L(\alpha)(h) =\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt
+		dS_\lagrangiano(\alpha)(h) =\int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}h+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\dot{h}\right) dt
 	\end{equation*}
 
 \end{proof}
@@ -55,30 +59,39 @@ Si $\maps{\alpha}{I=[t_0, t_1]}{\R^3}$ es una función que representa el movimie
 	Una función real $\alpha$ alcanza un valor extremo (máximo o mínimo) en el funcional $S_L$ sí y sólo sí se da la siguiente igualdad llamada \define{ecuación de Euler-Lagrange}{Ecuación de Euler-Lagrange}
 	\begin{equation}
 		\label{eq:euler-lagrange}
-		\frac{\partial L}{\partial \alpha}=\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)
+		\frac{\partial \lagrangiano}{\partial \alpha}=\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)
 	\end{equation}
 \end{theorem}
 \begin{proof}
-	Una función alcanza un valor máximo o mínimo en el funcional $S_L$ cuando su diferencial se hace cero, es decir, que $dS_L(\alpha)(h)=0$ para cualquier función $h$.
+	Una función alcanza un valor máximo o mínimo en el funcional $S_L$ cuando su diferencial se hace cero, es decir, que $dS_\lagrangiano(\alpha)(h)=0$ para cualquier función $h$.
 	\begin{equation*}
 		\begin{split}
-			0 = dS_L(\alpha)(h)~\by{\ref{eq:accion_diferencial}}&\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt =\\
-			= & \int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}}h \right)-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)h\right)\ dt = \\
-			= & \int_{I}\left( \frac{\partial L}{\partial \alpha}h-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)h\right)\ dt +\int_{I}\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}}h \right)\ dt = \\
-			= & \int_I\left( \frac{\partial L}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)\right)h\ dt + \left[ \frac{\partial L}{\partial \dot{\alpha}}h \right]_{t_0}^{t_1}
+			0 = dS_\lagrangiano(\alpha)(h)~\by{\ref{eq:accion_diferencial}}&\int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}h+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\dot{h}\right) dt =\\
+			= & \int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}h+\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}}h \right)-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)h\right)\ dt = \\
+			= & \int_{I}\left( \frac{\partial \lagrangiano}{\partial \alpha}h-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)h\right)\ dt +\int_{I}\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}}h \right)\ dt = \\
+			= & \int_I\left( \frac{\partial \lagrangiano}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)\right)h\ dt + \left[ \frac{\partial \lagrangiano}{\partial \dot{\alpha}}h \right]_{t_0}^{t_1}
 		\end{split}
 	\end{equation*}
 	En particular si nos restringimos a las funciones $h$ que cumplen $h(t_0)=0=h(t_1)$, el segundo sumando vale $0$ y el para el primer sumando tenemos que
 	\begin{equation*}
-		\int_{I}\left( \frac{\partial L}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right)\right)h\ dt = 0 \so \frac{\partial L}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\alpha}} \right) = 0
+		\int_{I}\left( \frac{\partial \lagrangiano}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)\right)h\ dt = 0 \so \frac{\partial \lagrangiano}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right) = 0
 	\end{equation*}
 \end{proof}
 
-\begin{definition}
-	Llamaremos \define{trayectoria}{Trayectoria} \index{Trayectoria} a la función que cumplen la ecuación de Euler-Lagrange~\eqref{eq:euler-lagrange}.
-\end{definition}
+\section{La energía en función del lagrangiano}\label{sec:la-energia-en-funcion-del-lagrangiano}
 
-\section{Principio de mínima acción}
+Un desarrollo interesante, y que necesitaremos más adelante para entender la conservación de la energía, es expresar como depende la energía del sistema en función del lagrangiano, para ello, vamos a considera un sistema físico con una sóla partícula, pues la generación a $N$ partículas es directa, observemos que:
+\begin{equation*}
+	\frac{\partial\lagrangiano}{\partial\dot{q}} =m\dot{q}\so \frac{\partial\lagrangiano}{\partial\dot{q}}\dot{q} =m\dot{q}^2 = 2K
+\end{equation*}
+
+Por lo tanto:
+\begin{equation}
+	\label{eq:energia-lagrangiana}
+	E=K+T=K+T+K-K=2K-\lagrangiano=\frac{\partial\lagrangiano}{\partial\dot{q}}\dot{q}-\lagrangiano
+\end{equation}
+
+\section{Principio de mínima acción}\label{sec:principio-de-minima-accion}
 
 El principio de mínima acción o principio de Hamilton, es un postulado básico de la física para describir la evolución a lo largo del tiempo del estado de movimiento de una partícula.
 

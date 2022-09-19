@@ -49,3 +49,60 @@ Como diría Einstein: \textquote{Su significante y altruista trabajo, realizado 
 Una vez en América, trabajó impartiendo clases de matemáticas en el \define{Bryn Mawr College}{Bryn Mawr College}, una universisdad femenina y cooperó con el \define{Instituto para Estudios Avanzados de Princeton}{Princeton}, donde trabajaba en ese momento Einstein~\autocite{Carrasco}.
 
 Dos años después, el 14 de Abril de 1935, con 54 años, Emmy fallecería a causa de complicaciones cardiacas en una operación.
+
+\section{Flujo}\label{sec:flujo}
+
+Para entender bien el primer teorema de Noether, y sobre todo, para poder entender la relación entre simetrías y conservación de cantidades, que se verán en los siguientes capítulos, es necesario presentar el concepto del flujo de Noether.
+
+Tenemos un sistema físico, con un Lagrangiano $\lagrangiano$ y $\maps{\alpha,\beta}{I=[t_0, t_1]}{\R^3}$ dos funciones, tales que los lagrangianos para ambas funciones está relacionado por una tercera función real que cumpla $\lagrangiano(\beta, \dot{\beta}, t) = \lagrangiano(\alpha, \dot{\alpha}, t)+\dot{f}$.
+Entonces las respectivas acciones están relacionadas por una constante, pues
+
+\begin{equation}
+	\label{eq:variacion-accion}
+	\begin{split}
+		S_\lagrangiano(\beta) & = \int_I \lagrangiano(\beta, \dot{\beta}, t) dt = \int_I \lagrangiano(\alpha, \dot{\alpha}, t)\ dt+\int_I \dot{f}dt=S_\lagrangiano(\alpha) +[f]_{t_0}^{t_1}
+	\end{split}
+\end{equation}
+
+Y en este caso, la relación entre las acciones es
+
+\begin{equation}
+	\label{eq:variacion-accion-relacion}
+	S_\lagrangiano(\beta) - S_\lagrangiano(\alpha) = f(t_1) - f(t_0)
+\end{equation}
+
+Como la diferencia entre las acciones es una constante, sus diferenciales son iguales, y por tanto si $\alpha$ es una trayectoria, también lo es $\beta$ y además tenemos que
+
+\begin{equation}
+	\label{eq:diferencial_trayectoria}
+	\begin{split}
+	[f]
+		_{t_0}^{t_1} = & S_\lagrangiano(\beta) - S_\lagrangiano(\alpha) = S_\lagrangiano(\alpha + (\beta-\alpha))-S_\lagrangiano(\alpha)=dS_\lagrangiano(\alpha)(\beta-\alpha)=\\
+		\by{\ref{eq:accion_diferencial}} & \int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}(\beta-\alpha)+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\dot{\beta}-\dot{\alpha})\right) dt = \\
+		\by{\ref{eq:euler-lagrange}} & \int_{I}\left( \frac{d}{dt}\left(\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\right)(\beta-\alpha)+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\dot{\beta}-\dot{\alpha})\right) dt=\\
+		= & \int_{I}\frac{d}{dt}\left(\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha)\right) dt = \frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha) + \text{ cte }
+	\end{split}
+\end{equation}
+
+Es decir, que para trayectorias cuyos lagrangianos se diferencia por la diferencial de una función, existe una constante $\ct{C}$ tal que
+\begin{equation}
+	\label{eq:flujo_noether_para_trayectorias}
+	\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha) = \ct{cte}
+\end{equation}
+
+\begin{definition}
+	Dadas dos trayectorias $\maps{\alpha,\beta}{I}{\R^3}$, llamamos \define{flujo de Noether}{Flujo de Noether} de $\alpha$ a $\beta$ a
+	\begin{equation}
+		\label{eq:flujo_noether}
+		\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha)
+	\end{equation}
+\end{definition}
+
+\section{Primer teorema de Noether}\label{sec:primer-teorema-de-noether}
+
+Llegado a este punto, ya estamos en condiciones de enunciar el primer teorema de Noether, cuya demostración no sino el desarrollo de este capítulo hasta llegar a la expresión~\ref{eq:flujo_noether_para_trayectorias}.
+
+\begin{theorem}
+	\label{thm:noether}
+	Si en un sistema con lagrangiano $\lagrangiano$ dos trayectorias $\alpha$ y $\beta$ cumple que $\lagrangiano(\beta, \dot{\beta}, t) = \lagrangiano(\alpha, \dot{\alpha}, t)+\dot{f}$ entonces el flujo de Noether de $\alpha$ a $\beta$, permanece constante.
+\end{theorem}

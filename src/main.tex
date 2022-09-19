@@ -8,13 +8,16 @@
 % Packages
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
+\usepackage{csquotes}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{fontspec}
 \usepackage{imakeidx}
 \usepackage[backend=biber, isbn=false, doi=false]{biblatex-chicago}
+\usepackage{biblatex}
 \bibliography{main}
+\bibliographystyle{chicago}
 \usepackage{cite}
 \input{personalizacion.tex}
 \setmainfont{Carlito}
@@ -39,10 +42,8 @@
     \include{conservaciones_clasicas}
     \include{conservaciones_quanticas}
 
-    \center{Bibliography}
-    \printbibliography[heading=none]
-    \bibliography{main}
-    \bibliographystyle{chicago}
+    \center{Bibliografía}
+    \printbibliography
 
     \printindex
 \end{document}

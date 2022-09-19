@@ -1,12 +1,6 @@
-\section{Mecánica Lagrangiana}
-Para poder entender el \define{Teorema de Noether}{Teorema de Noether} \index{Teorema de Noether}, piedra angular en el estudio de las simetrías, es preciso conocer primero un concepto propio de la Física denominado "Mecánica Lagrangiana".
+\chapter{Mecánica Lagrangiana}\label{ch:mecanica-lagrangiana}
 
-A partir de la formulación de las leyes del movimiento de Newton, los sistemas físicos se estudiaban mediante la posición de los elementos que los componen (valores de x,y,z en el caso de coordenadas cartesianas; ángulos y módulos en el caso de coordenadas polares; etc) y sus interacciones. Sin embargo, esto suponía que el estudio de los sitemas se volviera demasiado complejo en determinadas situaciones.
-
-Así, en 1788, el matemático Joseph-Louis Lagrange, inventó una manera de describir la mecánica, basada en la energía total del sistema, que suponía una simplificación del estudio gran cantidad de situaciones. Este modelo se basa en la ecuación de Euler-Lagrange que explicamos a continuación.
-
-
-\subsection{El lagrangiano del sistema}\label{sec:el-lagrangiano-del-sistema}
+\section{El lagrangiano del sistema}\label{sec:el-lagrangiano-del-sistema}
 
 La mecánica lagrangiana es una reformulación de la mecánica Newtoniana, introducida por Joseph-Louis de Lagrange en 1788, donde para cada partícula del sistema se consideran los valores que definen su posición, dichos valores reciben el nombre de \define{coordenadas generalizadas}{Coordenadas generalizadas}~\autocite{GTP}.
 Llamamos \define{velocidades generalizadas}{Velocidades generalizadas} a la derivada respecto del tiempo de las coordenadas generalizadas.
@@ -61,32 +55,6 @@ Si $\maps{\alpha}{I=[t_0, t_1]}{\R^3}$ es una función que representa el movimie
 
 \section{Ecuación de Euler-Lagrange}\label{sec:ecuacion-de-euler-lagrange}
 
-En la mayoría de los casos, a la hora de estudiar un sistema físico, podemos centrarnos exclusivamente en las variaciones (modificaciones) que ocurren en el mismo. Medante el "\define{Cálculo Variacional}{Cálculo Variacional}\index{Cálculo Variacional}", que es un apartado de las matemáticas que se ocupa de estudiar un sistema funcional a través de los máximos y mínimos de sus funciones, podemos obtener la información necesaria para comprender los cambios de un sistema determinado.
-
-El problema del llamado "Principio Variacional" surge en la historia de las matemáticas a través del estudio del problema de la "\define{Curva Braquistócrona}{Curva Braquistócrona}\index{Curva Braquistócrona}", planteado inicialmente por Johann Bernoulli en 1696 <<<FALTA CITA>>>.
-
-Si consideramos un sistema sometido a fuerzas gravitaroria y en el que hay dos puntos a distinta altura, se llama Curva Braquistócrona, a aquella que hace que el tiempo que tarda un cuerpo inicialmente parado que está situado en el punto más alto (al que llamaremos A), en llegar al punto más bajo (B), sea mínimo.
-
-Intuitivamente podría paracer que la función que cumple esto sería la línea recta, pero demostraremos a continuación que esto no es así.
-
-A continuación vemos un esquema del problema:
-
-DIBUJO EXPLICANDO LA CURVA BRAQUISTÓCRONA
-
-Como sabemos, la velocidad a la que se mueve un objeto es igual al espacio que recore en un tiempo determinado. Por lo que, suponiendo una magnitudes funcionales (no escalares) el tiempo que tarda el objeto en caer del punto A al punto B es:
-\begin{equation}
-	\label{eq:tiempo}
-	t_{A\xrightarrow{}B}=\int_{A}^{B}\frac{ds}{v}
-\end{equation}
-
-Sabemos que la velocidad del cuerpo a una determinada altura "y" es:
-\begin{equation}
-	\label{eq:velocidad_caida}
-	v=\sqrt{2gy}
-\end{equation}
-Con "g" igual a la aceleración gravitatoria.
-
-
 \begin{theorem}
 	Una función real $\alpha$ alcanza un valor extremo (máximo o mínimo) en el funcional $S_L$ sí y sólo sí se da la siguiente igualdad llamada \define{ecuación de Euler-Lagrange}{Ecuación de Euler-Lagrange}
 	\begin{equation}
@@ -112,46 +80,6 @@ Con "g" igual a la aceleración gravitatoria.
 
 \section{La energía en función del lagrangiano}\label{sec:la-energia-en-funcion-del-lagrangiano}
 
-
-\subsection{El lagrangiano del sistema}
-Ahora que ya sabemos como resolver los problemas variacionales, podemos pasar a definir un sistema en función a las variacione sque consideremos relevantes en el mismo.
-Consideremos los funcionales de las posiciones y velocidades que los elementos del sistema.
-
-La mecánica lagrangiana es una reformulación de la mecánica Newtoniana, introducida por Joseph-Louis de Lagrange en 1788, donde para cada partícula del sistema se considera su posición y velocidad como variables, definiendo así un espacio de fases de 6N+1 dimensiones, donde N es el número de partículas y 6=3+3 son 3 dimensiones para la posición y 3 dimensiones para la velocidad y +1 para el tiempo.
-
-Sobre este espacio de fases se define el lagrangiano ($L$), que es una aplicación escalar que se forma mediante la energía cinética ($T$) y la energía potencial ($V$) de tal manera que:
-\begin{equation}
-	\label{eq:lagrangiano_clasico}
-	L(\vec{r_1},\dots,\vec{r_N},\dot{\vec{r_1}},\dots,\dot{\vec{r_N}},t)=T-V=\sum\limits_{i=1}^{i=N} \frac{1}{2}m\|\dot{\vec{r_i}}\|^2-V(\vec{r_i},t)
-\end{equation}
-
-\subsection{Acción de un funcional}
-	Sea $\maps{L}{\R^n\times\R^n\times\R}{\R}$ una aplicación real y $\maps{\alpha}{I=[t_0, t_1]}{\R^n}$ una función real, definimos el funcional \define{acción de L}{acción} a:
-	\begin{equation}
-		\label{eq:accion}
-		S_L(\alpha) = \int_{I}L(\alpha(t), \dot{\alpha}(t), t)\ dt
-	\end{equation}
-
-\begin{proposition}
-	En los términos de la definición~\eqref{eq:accion}, el funcional $S_L$ es diferenciable en $\alpha$ y su valor es
-	\begin{equation}
-		\label{eq:accion_diferencial}
-		dS_L(\alpha)(h)=\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt
-	\end{equation}
-\end{proposition}
-\begin{proof}
-	Por la definición de diferencial y realizando el desarrollo de Taylor tenemos que
-	\begin{equation*}
-		\begin{split}
-			S_L(\alpha + h) -  S_L(\alpha)& = \int_{I}L(\alpha(t)+h(t), \dot{\alpha}(t)+\dot{h}(t), t)\ dt - \int_{I}L(\alpha(t), \dot{\alpha}(t), t)\ dt =\\
-			&\by{\ref{eq:polinomio-taylor-dos-variables}}\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right)\ dt+\mathcal{O}(h^2)\so\\
-			dS_L(\alpha)(h) &=\int_{I}\left( \frac{\partial L}{\partial\alpha}h+\frac{\partial L}{\partial\dot{\alpha}}\dot{h}\right) dt
-		\end{split}
-	\end{equation*}
-\end{proof}
-
-
-\subsection{Principio de mínima acción}
 Un desarrollo interesante, y que necesitaremos más adelante para entender la conservación de la energía, es expresar como depende la energía del sistema en función del lagrangiano, para ello, vamos a considera un sistema físico con una sóla partícula, pues la generación a $N$ partículas es directa, observemos que:
 \begin{equation*}
 	\frac{\partial\lagrangiano}{\partial\dot{q}} =m\dot{q}\so \frac{\partial\lagrangiano}{\partial\dot{q}}\dot{q} =m\dot{q}^2 = 2K

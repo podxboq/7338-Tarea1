@@ -1,6 +1,6 @@
 \section{Principio de mínima acción}\label{sec:principio-de-minima-accion}
 
-El principio de mínima acción surgió como una consecuencia de la mecánica clásica aplicada a la formulación lagrangiana.
+Cuando intentamos predecir la trayectoria de un cuerpo en movimiento, en la mayoría de los casos lo veremos fácilmente de manera intuitiva. Sin embargo, esta no resulta tan obvia a la hora de trabajar en el papel. Por lo que necesitamos alguna formula que nos ayude a determinarla. Esta es el llamado \textbf{principio de mínima acción}.
 
 Cuando interpretamos un sistema físico mediante las leyes de Newton, resulta directo el saber que trayectoria seguirá dicho objetos, ya que la misma, viene dada a través de las fuerzas a las que se ve sometido a lo largo del tiempo.
 Sin embargo, cuando abordamos el problema desde una perspectiva lagrangiana no tenemos suficiente información para resolver las ecuaciones del movimiento.
@@ -12,3 +12,74 @@ Es decir, si tenemos $\lagrangiano(q,\dot{q}, t)$ el lagrangiano del sistema, si
 \begin{equation*}
 	dS_\lagrangiano(\alpha)=0\so \frac{\partial \lagrangiano}{\partial \alpha}=\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)
 \end{equation*}
+El \textbf{principio de mínima acción} o \textbf{principio de Hamilton} es una consecuencia de la segunda ley de Newton, que nos informa acerca de las trayectorias que sigen los cuerpos en un sistema inercial:
+"Las leyes de Newton pueden ser enunciadas, no en la forma de F = m·a, si no en la siguiente forma: la energía cinética media menos la enegía potencial media es la mínima posible para la trayectoria de un objeto que va de un punto a otro"  (\cite{Feynman}).
+
+Como sabemos, el resultado de la energía cinética menos la energía potencial, conforma el lagrangiano del sistema como se comentó en \eqref{eq:lagrangiano_clasico}.
+\begin{equation}
+	\label{eq:lagrangiano_clasico_corto}
+	\lagrangiano(q,\dot{q},t)=T-V
+\end{equation}
+
+Pero nos interesa precisamente el valor de esas energías entre dos puntos determinados, esto nos lo da la acción, tal y como se enunció anteriormente en \eqref{eq:accion}
+
+\begin{equation}
+	S_\lagrangiano(\alpha) = \int_{I}\lagrangiano(\alpha(t), \dot{\alpha}(t), t)\ dt
+\end{equation}
+
+Así, si minimizamos el valor de la acción, podemos obtener la función que nos da la trayectoria que seguirá el objeto sujeto a lagrangiano indicado.
+\begin{equation}
+    \delta(S) = \delta \int_{I}\lagrangiano(\alpha(t), \dot{\alpha}(t), t)\ dt
+\end{equation}
+
+Gracias al cálculo variacional, sabemos que es condición necesaria que la derivada de una función, sea cero donde la función sea mínima. Consideremos que queremos determinar el camino que seguirá un cuerpo desde el punto $x_1$ al punto $x_2$ y consideremos también la función $\eta$ que representa la direrencia entre cualquier curva aleatorio y el camino que se seguirá, con $\eta{x_1} = \eta{x_2} = 0$:
+\begin{equation}
+    \label{eq:accion1}
+    \frac{dS}{d\alpha} = \int_{x_1}^{x_2}\frac{\partial\lagrangiano}{\partial\alpha}dx = \int_{x_1}^{x_2}(\eta\frac{\partial\lagrangiano}{\partial y} + \dot{\eta}\frac{\partial\lagrangiano}{\partial\dot{y}})dx = 0
+\end{equation}
+
+Integrando por partes:
+\begin{equation}
+    \int_{x_1}^{x_2}\dot{\eta}(x)\frac{\partial\lagrangiano}{\partial\dot{y}}dx = [\eta(x)\frac{\partial\lagrangiano}{\partial\dot{y}}]_{x_1}^{x_2} - \int_{x_1}^{x_2}\eta(x)\frac{d}{dx}(\frac{\partial\lagrangiano}{\partial\dot{y}})dx
+\end{equation}
+
+Recordemos que $\eta(x_1) = \eta(x_2) = 0$, el primer témino del segundo miembro es cero. Entonces:
+
+\begin{equation}
+    \int_{x_1}^{x_2}\dot{\eta}(x)\frac{\partial\lagrangiano}{\partial\dot{y}}dx = - \int_{x_1}^{x_2}\eta(x)\frac{d}{dx}(\frac{\partial\lagrangiano}{\partial\dot{y}})dx
+\end{equation}
+
+Susituyendo por \eqref{eq:accion1}:
+\begin{equation}
+    \int_{x_1}^{x_2}\eta(x)(\frac{\partial\lagrangiano}{\partial y} - \frac{d}{dx}\frac{\partial\lagrangiano}{\partial\dot{y}})dx = 0
+\end{equation}
+
+Como tiene que cumplirse esta ecuación para cualquier $\eta{x}$, entonces lo que hay entre paréntesis debe ser cero:
+\begin{equation}
+    \frac{\partial\lagrangiano}{\partial y} - \frac{d}{dx}\frac{\partial\lagrangiano}{\partial\dot{y}} = 0
+\end{equation}
+
+(\cite{Taylor})
+
+Con lo que hemos llegado a la ecuaciones de Lagrange.
+
+Resumiendo, el principio de mínima acción, establece que la trayectoria que seguirá un cuerpo en movimiento, sea aquella, de todas las posibles, que minimice la acción.
+
+Tenemos así, finalmente, tres formas de determinar la trayectoria de un cuerpo mediante la mecánica clásica (\cite[264]{Taylor}):
+\begin{itemize}
+    \item La segunda ley de Newton F = m \cdot a.
+    \item Las ecuaciones de Lagrange.
+    \item El Principio de Hamilton.
+\end{itemize}
+
+\subsection{Principio de Hamilton aplicado a la mecánica cuántica}
+La aplicación del Principio de Hamilton a la mecánica cuántica, comienza en 1933, con una afirmación nada definitoria por parte de \define{P. A. M. Dirac}{Dirac}\index{Dirac}:
+\begin{equation}
+    (q_t|q_T)\text{ corresponde a }exp[i int_{T}{t}\lagrangiano dt/h] 
+\end{equation}
+
+(\cite{DiracLagrangian})
+
+Sin expresar claramente que quiere decir con \textit{corresponde a}. Sugiriendo una relación entre la mecánica de Newton y la acción (la integral del lagrangiano).
+
+Años más tarde, esta afirmación llamaría la atención de \define{Richard Feynman}{Richard Feynman}\index{Feynman} y la estudiaría como si fuese una ecuación, dando lugar a su formaulación del \define{Path Integral}{Path Integral}\index{Path Integral}.

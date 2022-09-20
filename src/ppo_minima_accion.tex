@@ -2,10 +2,13 @@
 
 El principio de mínima acción surgió como una consecuencia de la mecánica clásica aplicada a la formulación lagrangiana.
 
-Consideremos una masa en movimiento y su trayectoria.
+Cuando interpretamos un sistema físico mediante las leyes de Newton, resulta directo el saber que trayectoria seguirá dicho objetos, ya que la misma, viene dada a través de las fuerzas a las que se ve sometido a lo largo del tiempo.
+Sin embargo, cuando abordamos el problema desde una perspectiva lagrangiana no tenemos suficiente información para resolver las ecuaciones del movimiento.
 
-Cuando interpretamos un sistema físico mediante las leyes de Newton, resulta directo el saber que trayectoria seguirá dicho objetos, ya que la misma, viene dada a través de las fuerzas a las que se ve sometido a lo largo del tiempo. Sin embargo, cuando abordamos le problema desde una perspectiva lagrangiana
+El \define{principio de mínima acción}{Principio de mínima acción} o \define{principio de Hamilton}{Principio de Hamilton}, es un postulado que dice que el movimiento del sistema descrito por las coordenadas generalizadas es aquel que minimiza la acción del lagrangiano.
 
-El principio de mínima acción o principio de Hamilton, es un postulado básico de la física para describir la evolución a lo largo del tiempo del estado de movimiento de una partícula.
+Es decir, si tenemos $\lagrangiano(q,\dot{q}, t)$ el lagrangiano del sistema, si $\alpha(t)$ es una curva que representa la trayectoria dentro del sistema entre dos instantes de tiempo $t_0$ y $t_1$, entonces:
 
-El \textbf{principio de mínima acción} o \textbf{principio de Hamilton}, dice que las partículas se mueven a traves de trayectorias que minimizan la acción del lagrangiano.
+\begin{equation*}
+	dS_\lagrangiano(\alpha)=0\so \frac{\partial \lagrangiano}{\partial \alpha}=\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)
+\end{equation*}

@@ -1,0 +1,17 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {0.1}Introducción}{1}{}%
+\contentsline {chapter}{\numberline {1}Mecánica Lagrangiana}{3}{}%
+\contentsline {section}{\numberline {1.1}El lagrangiano del sistema}{3}{}%
+\contentsline {section}{\numberline {1.2}integral de acción}{4}{}%
+\contentsline {section}{\numberline {1.3}Ecuación de Euler-Lagrange}{5}{}%
+\contentsline {section}{\numberline {1.4}La energía en función del lagrangiano}{6}{}%
+\contentsline {section}{\numberline {1.5}Principio de mínima acción}{7}{}%
+\contentsline {chapter}{\numberline {2}Emmy Noether}{8}{}%
+\contentsline {section}{\numberline {2.1}Biografía}{8}{}%
+\contentsline {chapter}{\numberline {3}Primer teorema de Noether}{12}{}%
+\contentsline {section}{\numberline {3.1}Flujo}{12}{}%
+\contentsline {section}{\numberline {3.2}Simetrías y cantidades conservadas en la mecánica clásica}{14}{}%
+\contentsline {section}{\numberline {3.3}Homogeneidad del espacio y conservación del momento lineal}{14}{}%
+\contentsline {section}{\numberline {3.4}Isotropía del espacio y conservación del momento angular}{15}{}%
+\contentsline {section}{\numberline {3.5}Homogeneidad del tiempo y conservación de la energía}{15}{}%
+\contentsline {section}{\numberline {3.6}Simetrías y cantidades conservadas quánticas}{16}{}%

@@ -10,3 +10,4 @@ main.ilg
 main.log
 main.pdf
 main.xdv
+*.aux

@@ -1,13 +1,30 @@
 
 \chapter{Simetrías y cantidades conservadas quánticas}\label{ch:simetrias-y-cantidades-conservadas-quanticas}
 
-\section{Simetrías globales}\label{sec:simetrias-globales}
+No podemos presentar con el mismo detalle que en el capítulo anterior, la relación entre simetrías y cantidades conservadas en mecánica cuántica, pues el marco matemático es completamente diferente, y tendríamos que desarrollar y explicar conceptos como los operadores, generadores de simetrías, campos, variedades diferenciales, etc. que no es el objetivo de este trabajo.
 
-En la física quántica, también encontramos cantidades que se conservan por simetrías, no vamos a dar muchos detalles de estas relaciones por no extendernos en los conceptos y notaciones necearias.
+Sin embargo, y por la importancia que tiene también en física clásica, sí le daremos más protagonismo a un caso particular: el electromagnetismo.
 
-En física de partículas, el isospín es un número cuántico relacionado con la interacción fuerte y aplicado a las interacciones del neutrón y el protón.
-Las interación fuerte es invariante bajo rotación espacial, y aplicando el teorema de Noether nos lleva a la conservación del isospin de la partícula.
+\section{Simetría en electromagnetismo}\label{sec:simetria-en-electromagnetismo}
 
-Como aplicación de este resultado, sabemos por tanto que como la interacción débil no conserva el isospin, entonces no puede ser invariante bajo rotación, y esto significa que esta interacción rompe una de las simetrías consideradas como esenciales hasta este momento, la simetría CPT
+Se dice que una teoria es una \define{teoría gauge}{Teoría Gauge} si es una teoría de campos donde el lagrangiano es invariante ante transformaciones locales sobre ciertas familias de operaciones diferenciables\autocite{MAQFT}.
 
-Carga <-> Transformación Gauge
+Cuando un conjunto de simetrías de una teoría gauge tiene estructura de grupo, se dice que hay un \define{grupo de simetrías}{Grupo de simetrías}.
+Y en general, las teorías gauge se puede expresar (caracterizar) como una \textquotedblleft combinación \textquotedblright especial de grupos de simetrías.
+
+La teoría gauge más famosa es sin duda la teoría electromagnética de Maxwell, aquí tenemos una simetría que genera el grupo de simetrías $U(1)$ y que al usar el teorema de Noether sobre la invarianza del lagrangiano para esta simetría, obtenemos la \textbf{conservación de la carga eléctrica}.
+
+\section{Otras simetrías}\label{sec:otras-simetrias}
+
+En física quántica, una \define{carga}{Carga} es un generador arbitrario de una simetría contínua del sistema físico.
+Cuando un sistema físico exhibe alguna simetría, el teorema de Noether implica la existencia de una corriente conservada.
+Lo que \textquotedblleft fluye\textquotedblright\ en la corriente es la \textquotedblleft carga\textquotedblright, que es el generador del grupo de simetría (local).
+Este carga a veces se denomina carga de Noether\autocite{W-CARGA}.
+
+La teoría de gauge mas exitosa en la actualiadad es el \define{modelo estándar}{Modelo estándar}, que podemos caracterizar a través de sus grupos de simetrías $U(1)\times SU(2)\times SU(3)$.
+
+\begin{itemize}
+	\item Como ya hemos visto, la simetría en $U(1)$ conlleva a la conservación de la carga eléctrica.
+	\item La simetría de $SU(2)$ conlleva a la conservación del isospín débil.
+	\item La simetría de $SU(3)$ conlleva a la conservación de la carga de color.
+\end{itemize}

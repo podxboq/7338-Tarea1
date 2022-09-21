@@ -1,14 +1,11 @@
 \chapter{Mecánica Lagrangiana}\label{ch:mecanica-lagrangiana}
-
 \section{El lagrangiano del sistema}\label{sec:el-lagrangiano-del-sistema}
-
 Para poder entender el Teorema de Noether, piedra angular en el estudio de las simetrías, es preciso conocer primero un concepto propio de la física denominado \textquotedblleft Mecánica Lagrangiana\textquotedblright.
 
 A partir de la formulación de las leyes del movimiento de Newton, los sistemas físicos se estudiaban mediante la posición de los elementos que los componen (coordenadas x, y, z; ángulos y módulos en el caso de coordenadas polares; etc) y sus interacciones.
-Sin embargo, esto suponía que el estudio de los sitemas se volviera demasiado complejo en determinadas situaciones.
+Sin embargo, esto suponía que su análisis se volviera demasiado complejo en determinadas situaciones.
 
 Así, en 1788, el matemático Joseph-Louis Lagrange, inventó una manera de describir la mecánica que suponía una simplificación del estudio en gran cantidad de situaciones.
-Este modelo se basa en la ecuación de Euler-Lagrange que explicamos a continuación.
 
 En la mecánica lagrangiana, para cada partícula del sistema se consideran los valores que definen su posición, dichos valores reciben el nombre de \define{coordenadas generalizadas}{Coordenadas generalizadas}~\cite{GTP}.
 Llamamos \define{velocidades generalizadas}{Velocidades generalizadas} a la derivada respecto del tiempo de las coordenadas generalizadas.
@@ -22,7 +19,7 @@ Se define el \define{lagrangiano}{Lagrangiano} $\lagrangiano$, como la aplicaci�
 	\lagrangiano(q,\dot{q},t)=T-V=\sum\limits_{i=1}^{N} \frac{1}{2}m\|\dot{q_i}\|^2-V(q_i,t)
 \end{equation}
 
-\section{integral de acción}\label{sec:integral-de-accion}
+\section{Integral de acción}\label{sec:integral-de-accion}
 
 Un concepto muy importante en mecánica, asociado al Lagrangiano $\lagrangiano$, es el de \define{integral de acción}{Integral de acción} o simplemente \define{acción}{Acción}, que es un valor numérico calculado a través de la integral del lagrangiano sobre el tiempo entre dos instantes.
 Si $\maps{\alpha}{I=[t_0, t_1]}{\R^3}$ es una función que representa el movimiento de una partícula, la acción se define como
@@ -98,4 +95,3 @@ Por lo tanto:
 	\label{eq:energia-lagrangiana}
 	E=K+T=K+T+K-K=2K-\lagrangiano=\frac{\partial\lagrangiano}{\partial\dot{q}}\dot{q}-\lagrangiano
 \end{equation}
-

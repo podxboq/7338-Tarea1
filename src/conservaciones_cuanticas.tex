@@ -1,0 +1,52 @@
+
+\chapter{Simetrías y cantidades conservadas en física cuántica}\label{ch:simetrias-y-cantidades-conservadas-en-fisica-cuantica}
+
+No podemos presentar con el mismo detalle que en el capítulo anterior, la relación entre simetrías y cantidades conservadas en mecánica cuántica, pues el marco matemático es completamente diferente, y tendríamos que desarrollar y explicar conceptos como los operadores, generadores de simetrías, campos, variedades diferenciales, etc. que no es el objetivo de este trabajo.
+
+Aún así, vamos a presentar los resultados más importantes en materia de simetrias en física cuántica usando la terminología propia de cada marco teórico.
+
+Sin embargo, y por la importancia que tiene también en física clásica, sí le daremos más protagonismo a un caso particular: el electromagnetismo.
+
+\section{Simetrías de la ecuación de Schrödinger}
+
+En mecánica cuántica, debemos hacernos las mismas preguntas y seguir el mismo razonamiento realizado en los capítulos anteriores pues el marco matemático cambia, donde antes habían funciones, ahora hay operadores, los vectores no están en un espacio euclídeo sino en un espacio de Hilbert, y los escalares no son reales ($\R$) sino compejos ($\C$).
+
+Como se desarrolla en~\autocite{QMS}, las consideraciones sobre el lagrangiano~\eqref{eq:lagrangiano_clasico_corto}, ecuación de Euler-Lagrange~\eqref{eq:euler-lagrange}, Teorema de Noether~\eqref{thm:noether}, se respetan y podemos hacer uso de ellos.
+Además, tenemos los mismos resultados de simetrías y cantidades conservadas:
+
+\begin{itemize}
+	\item El sistema físico es homogéneo en el espacio $\Leftrightarrow$ Se conserva el momento.
+	\item El sistema físico es isotrópico en el espacio $\Leftrightarrow$ Se conserva el momento angular.
+	\item El sistema físico es homegéneo en el tiempo $\Leftrightarrow$ Se conserva la energía.
+\end{itemize}
+
+Sin embargo, en mecánica cuántica, obtenemos otras simetrías (y por tanto cantidades conservadas) que no están en física clásica y que han permitido conocer con más detalle las entrañas y el comportamiento de las partículas elementales.
+
+Al estudiar las simetrías al realizar rotaciones en mecánica cuántica, con respecto al estudio en física clásica, nos aparece que existe otra solución al sistema, bajo ciertas condiciones, que dicho rápidamente, se basa en una rotación espacial (el equivalente al caso clásico) más una rotación \textquotedblleft interna\textquotedblright\, aunque esta expresión no tenga sentido para partículas puntuales. Esta segunda rotación es el \define{spin}{Spin} de la partícula, un concepto púramente cuántico sin análogo en la física clásica.
+
+Volviendo a la conservación de cantidades, la simetría rotacional de un campo vectorial no sólo nos lleva a la conservación del momento angular, sino a que el spin de la partícula debe ser 1.
+Por eso, partículas como el fotón o el mesón, al estar definidas por campos de vectores tiene spin 1~\cite{QMS}.
+
+\section{Simetría en electromagnetismo}\label{sec:simetria-en-electromagnetismo}
+
+Se dice que una teoria es una \define{teoría gauge}{Teoría Gauge} si es una teoría de campos donde el lagrangiano es invariante ante transformaciones locales sobre ciertas familias de operaciones diferenciables~\cite{MAQFT}.
+
+Cuando un conjunto de simetrías de una teoría gauge tiene estructura de grupo, se dice que hay un \define{grupo de simetrías}{Grupo de simetrías}.
+Y en general, las teorías gauge se puede expresar (caracterizar) como una \textquotedblleft combinación\textquotedblright\ especial de grupos de simetrías.
+
+La teoría gauge más famosa es sin duda la teoría electromagnética de Maxwell, aquí tenemos una simetría que genera el grupo de simetrías $U(1)$ y que al usar el teorema de Noether sobre la invarianza del lagrangiano para esta simetría, obtenemos la \textbf{conservación de la carga eléctrica}.
+
+\section{Otras simetrías}\label{sec:otras-simetrias}
+
+En física cuántica, una \define{carga}{Carga} es un generador arbitrario de una simetría contínua del sistema físico.
+Cuando un sistema físico exhibe alguna simetría, el teorema de Noether implica la existencia de una corriente conservada.
+Lo que \textquotedblleft fluye\textquotedblright\ en la corriente es la \textquotedblleft carga\textquotedblright, que es el generador del grupo de simetría (local).
+Este carga a veces se denomina carga de Noether~\cite{W-CARGA}.
+
+La teoría de gauge mas exitosa en la actualiadad es el \define{modelo estándar}{Modelo estándar}, que podemos caracterizar a través de sus grupos de simetrías $U(1)\times SU(2)\times SU(3)$.
+
+\begin{itemize}
+	\item Como ya hemos visto, la simetría en $U(1)$ conlleva a la conservación de la carga eléctrica.
+	\item La simetría de $SU(2)$ conlleva a la conservación del isospín débil.
+	\item La simetría de $SU(3)$ conlleva a la conservación de la carga de color.
+\end{itemize}

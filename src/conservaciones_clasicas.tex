@@ -2,33 +2,39 @@
 
 \section{Simetrías y cantidades conservadas}\label{sec:simetrias-y-cantidades-conservadas}
 
-Las leyes de conservación son fundamentales para entender los procesos físicos y nos permiten anticipar que situaciones pueden darse y cuales no.
+Las leyes de conservación son fundamentales para entender los procesos físicos y nos permiten comprender como evolucionan los sistemas.
 
-Existen leyes de conservación globales, que se aplican a cualquier rama de la física como las leyes de conservación de la energía, el movimiento lineal, el movimiento angular y la carga eléctrica.
-
-Otras son leyes de conservación locales, que sólo se pueden aplicar en contexto muy concretos, como las leyes de conservación de la paridad, el número leptónico, el número barionico y el isospin.
-
-Cuando el lagrangiano de un sistema tiene una simetría $\sigma$, éste se mantiene invariante tras aplicar la simetría, y por tanto, estamos en condiciones de aplicar el teorema de Noether (Teorema ~\eqref{thm:noether}) y afirmar que el flujo de Noether de $\alpha$ a $\sigma(\alpha)$ es constante.
+Cuando el lagrangiano de un sistema tiene una simetría $\sigma$, éste se mantiene invariante tras aplicar la simetría, y por tanto, estamos en condiciones de aplicar el teorema de Noether (Teorema ~\eqref{thm:noether}) y afirmar que la carga de Noether de $\alpha$ a $\sigma(\alpha)$ es constante.
 
 \section{Homogeneidad del espacio y conservación del momento lineal}\label{sec:homogeneidad-del-espacio-y-conservacion-del-momento-lineal}
-Es lógico pensar que las ecuaciones de la física no cambien según el lugar del espacio elegido, por eso, un cambio de coordenadas por traslación, $\beta(t)=\alpha(t)+p_0$ donde $p_0\in\R^3$ debe dejar invariante la acción del lagrangiano y así el flujo de Noether constante, es decir
+Es lógico pensar que las ecuaciones de la física no cambien según el lugar del espacio elegido, por eso, un cambio de coordenadas por traslación es una simetría.
+¿Cual es la carga de Noether?
+
+La simetría de traslación la podemos caracterizar por $f(q)=q+q_0$ para todo $q, q_0\in\R^n$ donde $q_0$ es constante.
+Por el teorema de Noether~\eqref{thm:noether}, la carga de Noether es
 \begin{equation}
 	\label{eq:conservacion_momento_lineal}
-	\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha) = \frac{\partial \lagrangiano}{\partial\dot{\alpha}}p_0=\text{cte}\so\frac{\partial \lagrangiano}{\partial\dot{\alpha}}=\text{cte}
+	\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(f(\alpha)-\alpha) = \frac{\partial \lagrangiano}{\partial\dot{\alpha}}p_0=\text{cte}\so\frac{\partial \lagrangiano}{\partial\dot{\alpha}}=\text{cte}
 \end{equation}
 
-Por tanto, podemos asegurar, que si en nuestro sistema físico no existe un observador privilegiado, entonces el momento lineal se conserva.
+Por tanto, podemos asegurar, que si en nuestro sistema físico no existe un observador privilegiado (homogeneidad del espacio), entonces el momento lineal se conserva.
 
 \section{Isotropía del espacio y conservación del momento angular}\label{sec:isotropia-del-espacio-y-conservacion-del-momento-angular}
-Es lógico pensar que las ecuaciones de la física no cambien según la orientación elegida, por eso, una rotación en un plano del tipo $\beta(t)=\alpha(t) + (\alpha(t)\times s)$ donde $s$ es un vector sobre el eje de rotación, debe dejar invariante la acción del lagrangiano y dejar el flujo de Noether constante, es decir
+Es lógico pensar que las ecuaciones de la física no cambien según la orientación elegida, por eso, un cambio de coordenadas por rotación es una simetría.
+¿Cual es la carga de Noether?
+
+La simetría de rotación la podemos caracterizar por $f(q)=q+(q\times s)$ para todo $q\in\R^n$ y $s$ es un vector unitario sobre el eje de rotación.
+Por el teorema de Noether~\eqref{thm:noether}, la carga de Noether es
 \begin{equation}
 	\label{eq:conservacion_momento_angular}
-	\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha) = \frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\alpha\times s) = s \frac{\partial \lagrangiano}{\partial\dot{\alpha}}\times \alpha=\text{cte}\so\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\times \alpha=\text{cte}
+	\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(f(\alpha)-\alpha) = \frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\alpha\times s) = s \frac{\partial \lagrangiano}{\partial\dot{\alpha}}\times \alpha=\text{cte}\so\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\times \alpha=\text{cte}
 \end{equation}
 
-Por tanto, podemos asegurar, que si en nuestro sistema físico no existe una dirección priviligiada, entonces el momento angular se conserva.
+Por tanto, podemos asegurar, que si en nuestro sistema físico no existe una dirección privilegiada (isotropía del espacio), entonces el momento angular se conserva.
 
 \section{Homogeneidad del tiempo y conservación de la energía}\label{sec:homogeneidad-del-tiempo-y-conservacion-de-la-energia}
+
+
 
 Es lógico pensar que las leyes de la física no cambien con el tiempo, por eso, el lagrangiano de un sistema no puede depender explícitamente del tiempo, así pues, debemos tener que $\frac{d\lagrangiano}{dt}=0$.
 Por lo tanto tenemos:

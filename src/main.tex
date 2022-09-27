@@ -20,24 +20,25 @@
 \input{personalizacion.tex}
 \setmainfont{Calibri}
 \renewcommand{\baselinestretch}{1.5}
-\setlength{\parskip}{\baselineskip}
 % Document
 \makeindex
 \begin{document}
-    \title{La importancia de las simetrías en física}
-    \author{Francisco Costa y Francisco Vidal}
-    \date{Septiembre 2022}
-    \maketitle
-    \tableofcontents
+	\title{La importancia de las simetrías en física}
+	\author{Francisco Costa y Francisco Vidal}
+	\date{Septiembre 2022}
+	\maketitle
+	\tableofcontents
 
-    \include{intro}
-    \include{mecanica_lagrangiana}
-    \include{ppo_minima_accion}
-    \include{bio_noether}
-    \include{conservaciones_clasicas}
-    \include{conservaciones_cuanticas}
+	\setlength{\parskip}{\baselineskip}
+	\include{intro}
+	\include{mecanica_lagrangiana}
+	\include{ppo_minima_accion}
+	\include{bio_noether}
+  \include{teorema_nother}
+	\include{conservaciones_clasicas}
+	\include{conservaciones_cuanticas}
 
-    \printbibliography
+	\printbibliography
 
-    \printindex
+	\printindex
 \end{document}

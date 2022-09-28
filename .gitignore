@@ -11,3 +11,9 @@ main.log
 main.pdf
 main.xdv
 *.aux
+src/main.bcf
+src/main.idx
+src/main.ind
+src/main.toc
+src/main.bcf
+src/main.bcf

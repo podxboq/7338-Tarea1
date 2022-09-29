@@ -9,7 +9,7 @@ Para el caso que nos ocupa en este tema, lo que nos interesa son las simetrías 
 \section{Carga de Noether}\label{sec:carga-de-noether}
 Para entender bien el primer teorema de Noether, y sobre todo, para poder entender la relación entre simetrías y conservación de cantidades, que se verán más adelante, es necesario presentar el concepto de la carga de Noether.
 
-Tenemos un sistema físico, con un Lagrangiano $\lagrangiano$ y $\maps{\alpha,\beta}{I=[t_0, t_1]}{\R^n}$ dos funciones, tales que los lagrangianos para ambas funciones están relacionados por una tercera función $f$ real que cumpla $\lagrangiano(\beta, \dot{\beta}, t) = \lagrangiano(\alpha, \dot{\alpha}, t)+\dot{f}$.
+Tenemos un sistema físico, con un Lagrangiano $\lagrangiano$ y $\maps{\alpha,\beta}{I=[t_0, t_1]}{\R^n}$ dos funciones, tales que los lagrangianos para ambas funciones están relacionados por una tercera función $f$ real que cumple $\lagrangiano(\beta, \dot{\beta}, t) = \lagrangiano(\alpha, \dot{\alpha}, t)+\dot{f}$.
 Entonces las respectivas acciones están relacionadas por una constante, pues:
 \begin{equation}
 	\label{eq:variacion-accion}
@@ -21,19 +21,16 @@ Y en este caso, la diferencia entre las acciones es:
 	\label{eq:variacion-accion-relacion}
 	S_\lagrangiano(\beta) - S_\lagrangiano(\alpha) = f(t_1) - f(t_0)
 \end{equation}
-
 Como la diferencia entre las acciones es una constante, sus diferenciales son iguales, y por tanto si $\alpha$ es una trayectoria, también lo es $\beta$ y además, al cumplir con la ecuación de Euler-Lagrange, tenemos que:
 \begin{equation}
 	\label{eq:diferencial_trayectoria}
 	\begin{split}
-	[f]
-		_{t_0}^{t_1} = & S_\lagrangiano(\beta) - S_\lagrangiano(\alpha) = S_\lagrangiano(\alpha + (\beta-\alpha))-S_\lagrangiano(\alpha)=dS_\lagrangiano(\alpha)(\beta-\alpha)=\\
-		\by{\ref{eq:accion_diferencial}} & \int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}(\beta-\alpha)+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\dot{\beta}-\dot{\alpha})\right) dt = \\
-		\by{\ref{eq:euler-lagrange}} & \int_{I}\left( \frac{d}{dt}\left(\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\right)(\beta-\alpha)+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\dot{\beta}-\dot{\alpha})\right) dt=\\
-		= & \int_{I}\frac{d}{dt}\left(\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha)\right) dt = \frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha) + \text{ cte }
+	[f]_{t_0}^{t_1} & = S_\lagrangiano(\beta) - S_\lagrangiano(\alpha) = S_\lagrangiano(\alpha + (\beta-\alpha))-S_\lagrangiano(\alpha)=dS_\lagrangiano(\alpha)(\beta-\alpha)=\\
+	&\by{\ref{eq:accion_diferencial}} \int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}(\beta-\alpha)+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\dot{\beta}-\dot{\alpha})\right) dt = \\
+	&\by{\ref{eq:euler-lagrange}} \int_{I}\left( \frac{d}{dt}\left(\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\right)(\beta-\alpha)+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\dot{\beta}-\dot{\alpha})\right) dt=\\
+	&= \int_{I}\frac{d}{dt}\left(\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha)\right) dt = \frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha) + \text{ cte }
 	\end{split}
 \end{equation}
-
 Es decir, que para trayectorias cuyos lagrangianos se diferencia por la diferencial de una función, existe una constante $\ct{C}$ tal que
 \begin{equation}
 	\label{eq:carga_noether_para_trayectorias}
@@ -51,7 +48,7 @@ Es decir, que para trayectorias cuyos lagrangianos se diferencia por la diferenc
 \section{Primer teorema de Noether}\label{sec:primer-teorema-de-noether}
 
 Llegado a este punto, ya estamos en condiciones de enunciar el primer teorema de Noether.
-No vamos a enunciarlo tal y como se publicó, sino una versión más sencilla de entender, para consultar la versión original remitimos a su lectura en la versión traducida del alemán al inglés de (\cite{Noether_1971}).
+No vamos a enunciarlo tal y como se publicó, sino una versión más sencilla de entender, para consultar la versión original remitimos a su lectura en la versión traducida del alemán al inglés de~\cite{Noether_1971}.
 
 \begin{theorem}
 	\label{thm:noether}

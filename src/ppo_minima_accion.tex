@@ -1,20 +1,17 @@
 \section{Principio de mínima acción}\label{sec:principio-de-minima-accion}
 
-Cuando intentamos predecir la trayectoria de un cuerpo en movimiento, en la mayoría de los casos lo veremos fácilmente de manera intuitiva. Sin embargo, esta no resulta tan obvia a la hora de trabajar en el papel. Por lo que necesitamos alguna fórmula que nos ayude a determinarla. Esta es el llamado \textbf{principio de mínima acción}.
+Cuando intentamos predecir la trayectoria de un cuerpo en movimiento, en la mayoría de los casos lo veremos fácilmente de manera intuitiva. Sin embargo, esta no resulta tan obvia a la hora de trabajar en el papel. Por lo que necesitamos alguna fórmula que nos ayude a determinarla, ésta es el llamado \textbf{principio de mínima acción}.
 
 El \define{principio de mínima acción}{Principio de mínima acción} o \define{principio de Hamilton}{Principio de Hamilton}, es un postulado que dice que el movimiento del sistema descrito por las coordenadas generalizadas es aquel que minimiza la acción del lagrangiano\label{po:pma}.
 
-Es decir, si tenemos $\lagrangiano(q,\dot{q}, t)$ el lagrangiano del sistema, si $\alpha(t)$ es una curva que representa el movimiento de una partícula entre dos instantes de tiempo $t_0$ y $t_1$, entonces:
-\begin{equation*}
-	dS_\lagrangiano(\alpha)=0\so \frac{\partial \lagrangiano}{\partial \alpha}=\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)
-\end{equation*}
+Es decir, si tenemos $\lagrangiano(q,\dot{q}, t)$ el lagrangiano del sistema, las curvas que representan el movimiento entre dos instantes de tiempo $t_0$ y $t_1$, son aquellas que $dS_\lagrangiano(\alpha)=0$, por lo tanto al menos debe cumplir la ecuación de Euler-Lagrange~\eqref{eq:euler-lagrange}, es decir, a de ser una trayectoria.
 
 El \textbf{principio de mínima acción} está relacionado con la segunda ley de Newton, y nos informa acerca de las trayectorias que siguen los cuerpos en un sistema inercial:
-"Las leyes de Newton pueden ser enunciadas, no en la forma de F = m·a, sino en la siguiente forma: la energía cinética media menos la energía potencial media es la mínima posible para la trayectoria de un objeto que va de un punto a otro" (\cite{Feynman}).
+"Las leyes de Newton pueden ser enunciadas, no en la forma de F = m·a, sino en la siguiente forma: la energía cinética media menos la energía potencial media es la mínima posible para la trayectoria de un objeto que va de un punto a otro"~\cite{Feynman}.
 
 Resumiendo, el principio de mínima acción, establece que la trayectoria que seguirá un cuerpo en movimiento, será aquella, de todas las posibles, que minimice la acción. Resultado al que, como hemos visto, podemos llegar a través de las ecuaciones de Euler-Lagrange (\eqref{eq:euler-lagrange}).
 
-Tenemos así, finalmente, tres formas de determinar la trayectoria de un cuerpo mediante la mecánica clásica (\cite[264]{Taylor}):
+Tenemos así, finalmente, tres formas de determinar la trayectoria de un cuerpo mediante la mecánica clásica~\autocite[264]{Taylor}:
 \begin{itemize}
     \item La segunda ley de Newton F = m \cdot a.
     \item Las ecuaciones de Lagrange.

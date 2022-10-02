@@ -3,15 +3,9 @@
 
 No podemos presentar con el mismo detalle que en el capítulo anterior, la relación entre simetrías y cantidades conservadas en mecánica cuántica, pues el marco matemático es completamente diferente, y tendríamos que desarrollar y explicar conceptos como los operadores, generadores de simetrías, campos, variedades diferenciales, grupos de Lie, etc. que no es el objetivo de este trabajo.
 
-Aún así, vamos a presentar los resultados más importantes en materia de simetrias en física cuántica usando la terminología propia de cada marco teórico.
-
-Sin embargo, y por la importancia que tiene también en física clásica, sí le daremos más protagonismo a un caso particular: el electromagnetismo.
-
-\section{Simetrías de la ecuación de Schrödinger}\label{sec:simetrias-de-la-ecuacion-de-schrodinger}
-
 En mecánica cuántica, debemos rehacernos las mismas preguntas y seguir el mismo razonamiento realizado en los capítulos anteriores pues el marco matemático cambia, donde antes habían funciones, ahora hay operadores, los vectores no están en un espacio euclídeo sino en un espacio de Hilbert, y los escalares no son reales ($\R$) sino compejos ($\C$).
 
-Como se desarrolla en~\cite{QMS}, las consideraciones sobre el lagrangiano~\eqref{eq:lagrangiano_clasico_corto}, ecuación de Euler-Lagrange~\eqref{eq:euler-lagrange}, Teorema de Noether~\eqref{thm:noether}, se respetan y podemos hacer uso de ellos.
+Como se desarrolla en~\cite{QMS}, las consideraciones sobre el lagrangiano~\eqref{eq:lagrangiano_clasico}, ecuación de Euler-Lagrange~\eqref{eq:euler-lagrange}, Teorema de Noether~\eqref{thm:noether}, se respetan y podemos hacer uso de ellos.
 Además, tenemos los mismos resultados de simetrías y cantidades conservadas:
 
 \begin{itemize}
@@ -20,33 +14,83 @@ Además, tenemos los mismos resultados de simetrías y cantidades conservadas:
 	\item El sistema físico es homegéneo en el tiempo $\Leftrightarrow$ Se conserva la energía.
 \end{itemize}
 
-Sin embargo, en mecánica cuántica, obtenemos otras simetrías (y por tanto cantidades conservadas) que no están en física clásica y que han permitido conocer con más detalle las entrañas y el comportamiento de las partículas elementales.
+Sin embargo, en mecánica cuántica, obtenemos otras simetrías (y por tanto cantidades conservadas) que no están en física clásica y que han permitido conocer con más detalle el comportamiento de las partículas elementales.
 
-Al estudiar las simetrías al realizar rotaciones en mecánica cuántica, con respecto al estudio en física clásica, nos aparece que existe otra solución al sistema, bajo ciertas condiciones, que dicho rápidamente, se basa en una rotación espacial (el equivalente al caso clásico) más una rotación \textquotedblleft interna\textquotedblright, aunque esta expresión no tenga sentido para partículas puntuales. Esta segunda rotación es el \define{spin}{Spin} de la partícula, un concepto puramente cuántico sin análogo en la física clásica.
+Como ya se adelantó en la introducción, las simetrías vienen caracterizas por las matemáticas de los grupos, y al igual que se clasificaron las simetrías, tenemos grupos continuos y grupos discretos.
+Y ¿porqué es importante ahora hablar de grupos y tal vez no antes?, pues porqué en física clásica, al trabajar con números reales, visualizar una simetría es sencillo, sin embargo, ahora al considerar las ecuaciones de la física cuántica tenemos que usar resultados en el campo de los complejos, y nos resultará mas sencillo trabajar con un lenguaje abstracto pero poderoso, es decir, trabajaremos con grupos.
 
-Volviendo a la conservación de cantidades, la simetría rotacional de un campo vectorial no sólo nos lleva a la conservación del momento angular, sino a que el spin de la partícula debe ser 1.
-Por eso, partículas como el fotón o el mesón, al estar definidas por campos de vectores tiene spin 1~\cite{QMS}.
+\section{Spin}\label{sec:spin}
+Las rotaciones en el espacio en física clásica tienen asociado el grupo de simetrías $SO(3)$, al tratar las rotaciones en el campo complejo, dichas rotaciones tienen asociado el grupo de simetrías $SU(2)$.
+
+Sabemos que el grupo $SU(2)$ tiene dimensión $3$ y que una base para este grupo es:
+\begin{align}
+	\sigma_x & = \begin{pmatrix} 0 && 1 \\ 1 && 0 \end{pmatrix} &
+	\sigma_y & = \begin{pmatrix} 0 && -i \\ i && 0 \end{pmatrix} &
+	\sigma_z & = \begin{pmatrix} 1 && 0 \\ 0 && -1 \end{pmatrix}
+\end{align}
+
+Las tres matrices anteriores son conocidas como matrices de Pauli~\autocite[50]{IQC} que son usadas para definir los operadores del momento del spin magnético.
+
+Volviendo a la conservación de cantidades, la simetría rotacional conserva el operador momento angular, pero ahora dicho operador, que llamaremos $\hat{J}$ es en realidad una suma del análogo clásico de momento espacial ahora como operador, que llamaremos $\hat{L}$, más un nuevo valor asociado al spin que llamaremos $\hat{S}$.
+
+El teorema de Noether, nos dice que bajo esta simetría, la carga conservada en es $\hat{J}=\hat{L}+\hat{S}$, y de aquí obtenemos dos conclusiones muy curiosas~\autocite[45]{QMS}.
+\begin{itemize}
+	\item Cuando la rotación se estudia sobre una partícula descrita por un campo de escalares, para que se cumpla el teorema de Noether el spin debe valer $0$. La única partícula conocida que viene descrita como un campo de escalares es el bosón de Higgs, que efectivamente tiene spin $0$.
+	\item Cuando la rotación se estudia sobre una partícula descrita por un campo de vectores, para que se cumpla el teorema de Noether el spin debe valer $1$. Ejemplos de estos campos son los que modelizan el fotón y el mesón, que efectivamente tienen spin $1$.
+\end{itemize}
 
 \section{Simetría en electromagnetismo}\label{sec:simetria-en-electromagnetismo}
+Vamos a partir directamente de las ecuaciones de Maxwell, sin deducir este resultado~\autocite[38]{ISMPP}:
+\begin{align}
+	\label{eq:maxwell}
+	\nabla\cdot E & = \rho & \nabla\cdot B & = 0 \\
+	\nabla\times E & = -\frac{\partial B}{\partial t} & \nabla\times B & = J+\frac{\partial E}{\partial t}
+\end{align}
+Donde $B$ es el campo magnético, $E$ es el campo eléctrico, $J$ es la densidad de carga eléctrica y $\rho$ es la carga eléctrica.
 
-Se dice que una teoria es una \define{teoría gauge}{Teoría Gauge} si es una teoría de campos donde el lagrangiano es invariante ante transformaciones locales sobre ciertas familias de operaciones diferenciables~\cite{MAQFT}.
+El lagrangiano de una partícula en un campo electromagnético es
+\begin{equation}
+	\label{eq:lagrangiano-electromagnetico}
+	\lagrangiano(q,\dot{q},t)=\frac{1}{2}m\dot{q}^2-\rho\phi(q, t)+\rho\dot{q}\cdot A(q,t)
+\end{equation}
+Donde $\phi$ es el potencial eléctrico y $A$ es el potencial magnético.
 
-Cuando un conjunto de simetrías de una teoría gauge tiene estructura de grupo, se dice que hay un \define{grupo de simetrías}{Grupo de simetrías}.
-Y en general, las teorías gauge se puede expresar (caracterizar) como una \textquotedblleft combinación\textquotedblright\ especial de grupos de simetrías.
+¿Y cuales son las transformaciones que dejan invariante las ecuaciones del movimiento?. En este caso, una transformación del tipo $q\longrightarrow q+\frac{df}{dt}$ para cualquier función diferenciable.
 
-La teoría gauge más famosa es sin duda la teoría electromagnética de Maxwell, aquí tenemos una simetría que genera el grupo de simetrías $U(1)$ y que al usar el teorema de Noether sobre la invarianza del lagrangiano para esta simetría, obtenemos la \textbf{conservación de la carga eléctrica}.
+Este tipo de transformación define el flujo de Noether y la carga conservada que es $\nabla J=0$, es decir que la carga eléctrica no cambia con el tiempo, y por tanto que la carga eléctrica es una constante del sistema.
+
+Si cuantizamos las ecuaciones de Maxwell, calculando el Hamiltoniano y aplicando la ecuación de Schrödinger $i\hbar\frac{\partial \Psi(q,t)}{\partial t}=H\Psi$, obtenemos unas ecuaciones, que a diferencia del caso clásico, no tienen simetría global ante rotaciones, sino que se convierten en simetrías locales, lo que se define como simetría gauge~\cite{MAQFT}.
+
+Exactamente, la evolución temporal de una función de onda, al aplicarle la simetría gauge, nos modifica la solución de la ecuación de Schrödinger en un cambio de fase, $e^{i\alpha}$, que al ser unitario no afecta al módulo de la función de onda y por tanto el estado cuántico no se modifica.
+
+Como la simetría viene caracterizado por un cambio de fase, que sólo tiene un parámetro, el grupo de simetrías asociado es $U(1)$ y el valor invariante por este grupo es un escalar que ya sabemos que es \textbf{la carga eléctrica}. Para conseguir que la simetría local se convierta en simetría global, es necesario añadir un campo escalar que compense y de esta manera aparece un nuevo campo que tiene las propiedades del \textbf{fotón}.
+
+Hemos visto, como la simetría da explicaciones a propiedades fundamentales de la física, pero es que además, ahora, gracias a la simetría empezamos a ver el origen de las partículas elementales.
+
+\section{Carga, paridad y tiempo}\label{sec:paridad-carga-y-tiempo}
+
+Las simetrías discretas en el espacio-tiempo, tales como paridad (o reflexión especular, simbolizada por P) e inversión temporal (T, representa la inversión de todos los movimientos), así como la simetría interna de conjugación partícula-antipartícula (C), aparecen exactas en la naturaleza cuando las únicas interacciones en juego son las fuertes y electromagnéticas. Sin embargo, todas ellas sufren una ruptura ordenada para fenómenos en que intervienen las interacciones débiles, como por ejemplo la desintegración de algunas partículas y núcleos atómicos, y algunos procesos de fusión nuclear como los que ocurren en las estrellas, incluyendo nuestro Sol~\autocite{IFIC}.
+
+La violación de P fue descubierta en primer lugar en las desintegraciones beta de núcleos atómicos, y la de C y de P (por separado) en la desintegración del pión, en los años 50 del pasado siglo. La violación de CP fue descubierta inesperadamente en 1964 en la desintegración de kaones neutros, y se volvió a medir en las factorías de mesones B en 2001, mientras la demostración de la violación de T, usando el entrelazamiento de mesones B neutros, tuvo que esperar a 2012. En el Modelo Estándar se describen estas rupturas como consecuencia de dos facetas muy diferentes de la física: en el caso de P y C juega un papel fundamental la quiralidad, pues los campos levógiros y dextrógiros se transforman de forma distinta. Para CP y T es de suma importancia el contenido de partículas de la teoría, que necesita al menos tres familias de quarks y leptones para justificar la violación de esas simetrías~\autocite{IFIC}.
+
+Hasta el momento la única simetría discreta que permanece exacta es la combinación CPT. El Teorema CPT, demostrado durante los años 50 del siglo XX, establece que una teoría cuántica de campos que describa interacciones en un espacio-tiempo plano, es necesariamente invariante bajo la transformación de simetría CPT si verifica estas tres condiciones:
+\begin{itemize}
+	\item Ser invariante Lorentz.
+	\item Incluir sólo interacciones locales.
+	\item Evolución unitaria.
+\end{itemize}
+~\autocite{IFIC}
 
 \section{Otras simetrías}\label{sec:otras-simetrias}
 
-En física cuántica, una \define{carga}{Carga} es un generador arbitrario de una simetría contínua del sistema físico.
-Cuando un sistema físico exhibe alguna simetría, el teorema de Noether implica la existencia de una corriente conservada.
-Lo que \textquotedblleft fluye\textquotedblright\ en la corriente es la \textquotedblleft carga\textquotedblright, que es el generador del grupo de simetría (local).
+La teoría gauge mas exitosa en la actualidad es el \define{modelo estándar}{Modelo estándar}, que podemos caracterizar a través de sus grupos de simetrías $U(1)\times SU(2)\times SU(3)$.
+
+Como ya hemos visto, la simetría en $U(1)$ conlleva a la conservación de la carga eléctrica. Y la ruptura de la simetría local nos define la existencia del fotón, como partícula portadora de la interacción.
+
+Análogamente ocurre con el resto de simetrías, en el caso de $SU(2)$ que aparecía en las simetría rotacionales del campo magnético y que lleva a la conservación del momento angular total, tiene además importancia en el estudio de la interacción débil y de las conservaciones de los sabores\autocite[107]{ISMPP}.
+
+Según el modelo estándar de física de partículas, se define \define{sabor}{Sabor} al atributo que distingue a cada uno de los seis quarks: \textbf{u} (up, arriba), \textbf{d} (down, abajo), \textbf{s} (strange, extraño), \textbf{c} (charm, encantado), \textbf{b} (bottom, fondo) y \textbf{t} (top, cima).
 
 
-La teoría de gauge mas exitosa en la actualiadad es el \define{modelo estándar}{Modelo estándar}, que podemos caracterizar a través de sus grupos de simetrías $U(1)\times SU(2)\times SU(3)$.
+Por último la simetría de $SU(3)$ caracteriza las interacciones fuertes y su carga conservada es la carga de color. Se define el \define{color}{Color} como una propiedad cuántica que distingue entre partículas que interaccionan con la fuerza nuclear fuerte.
 
-\begin{itemize}
-	\item Como ya hemos visto, la simetría en $U(1)$ conlleva a la conservación de la carga eléctrica.
-	\item La simetría de $SU(2)$ conlleva a la conservación del isospín débil.
-	\item La simetría de $SU(3)$ conlleva a la conservación de la carga de color.
-\end{itemize}

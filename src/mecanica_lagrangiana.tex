@@ -40,7 +40,7 @@ Esta expresión se conoce como la \define{integral de acción}{integral de acci�
 
 En 1750, Leonhard Euler y Joseph-Louis Lagrange, encontraron una solución para esto.
 
-Por la definición de diferencial tenemos que para cualquier función $h$
+Consideremos una curva aleatoria, que pasa por $A$ y por $B$ distinta a la trayectoria que buscamos. Definimos $h(x) = h$ como la diferencia entre ambas curvas. Por la definición de diferencial tenemos que para cualquier función $h$
 \begin{equation*}
 	S_\lagrangiano(\alpha + h) -  S_\lagrangiano(\alpha) = dS_\lagrangiano(\alpha)(h) +\mathcal{O}(h^2)
 \end{equation*}
@@ -64,14 +64,23 @@ Por lo tanto, por la unicidad de diferencial de funciones, tenemos que:
 
 Una función alcanza un valor máximo o mínimo en el funcional $S_L$ cuando su diferencial se hace cero, es decir, que $dS_\lagrangiano(\alpha)(h)=0$ para cualquier función $h$.
 \begin{equation*}
+	\label{eq:premisa_euler_lagrange}
 	\begin{split}
-		0 = dS_\lagrangiano(\alpha)(h)~\by{\ref{eq:accion_diferencial}}&\int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}h+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\dot{h}\right) dt =\\
-		= & \int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}h+\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}}h \right)-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)h\right)\ dt = \\
-		= & \int_{I}\left( \frac{\partial \lagrangiano}{\partial \alpha}h-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)h\right)\ dt +\int_{I}\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}}h \right)\ dt = \\
-		= & \int_I\left( \frac{\partial \lagrangiano}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)\right)h\ dt + \left[ \frac{\partial \lagrangiano}{\partial \dot{\alpha}}h \right]_{t_0}^{t_1}
+		0 = dS_\lagrangiano(\alpha)(h)~\by{\ref{eq:accion_diferencial}}&\int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}h+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\dot{h}\right) dt
 	\end{split}
 \end{equation*}
-En particular si nos restringimos a las funciones $h$ que cumplen $h(t_0)=0=h(t_1)$, el segundo sumando vale $0$ y el para el primer sumando tenemos que
+
+Si integramos por partes el sumando de la derecha de la integral:
+\begin{equation}
+	\left[ \frac{\partial \lagrangiano}{\partial \dot{\alpha}}h \right]_{t_0}^{t_1}  - \int_I h \frac{d}{dt}\frac{\partial\lagrangiano}{\partial\dot\alpha} dt
+\end{equation}
+
+Dado que una premisa es que la curva aleatoria escogida, pase por $A$ y por $B$, nos restringimos a las funciones $h$ que cumplen $h(t_0)=0=h(t_1)$, entonces, el primer sumando vale $0$. Sustituimos el segundo sumando en \eqref{eq:premisa_euler_lagrange}:
+\begin{equation}
+	0 = \int_{I}\left(\frac{\partial \lagrangiano}{\partial\alpha}h + \frac{d}{dt}\frac{\partial\lagrangiano}{\partial\dot\alpha}h \right)dt = \int_{I}\left(\frac{\partial \lagrangiano}{\partial\alpha} + \frac{d}{dt}\frac{\partial\lagrangiano}{\partial\dot\alpha} \right) h dt
+\end{equation}
+
+Como $h \neq 0$:
 \begin{equation*}
 	\int_{I}\left( \frac{\partial \lagrangiano}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)\right)h\ dt = 0 \so \frac{\partial \lagrangiano}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right) = 0
 \end{equation*}

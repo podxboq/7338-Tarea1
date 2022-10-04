@@ -16,3 +16,6 @@ src/main.idx
 src/main.ind
 src/main.toc
 src/main.run.xml
+src/main.bbl
+src/main.blg
+src/main-blx.bib

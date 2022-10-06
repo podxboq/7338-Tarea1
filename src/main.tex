@@ -12,13 +12,17 @@
 \usepackage{imakeidx}
 \usepackage{tikz}
 \usepackage{float}
-%\usepackage[authordate,backend=bibtex]{biblatex-chicago}
+\usepackage{hyperref}
 \usepackage[authordate,backend=biber]{biblatex-chicago}
 \usepackage{biblatex}
 \bibliography{main}
 \input{personalizacion.tex}
 \setmainfont{Calibri}
 \renewcommand{\baselinestretch}{1.5}
+\hypersetup{
+	pdftitle={La importancia de las simetrías en física},
+}
+
 % Document
 \makeindex
 \begin{document}

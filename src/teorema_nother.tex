@@ -1,4 +1,4 @@
-\subsection{Simetrías}\label{sec:simetrias}
+\subsection{Simetrías}\label{subsec:simetrias}
 Como ya hemos comentado a lo largo del trabajo, una simetría es una característica de las transformaciones de un sistema que implica una invarianza, ahora vamos a definir exactamente qué es eso que se mantiene, qué es una transformación y por tanto, que es exactamente una simetría.
 
 Sean $A, B$ dos conjuntos y $C$ un subconjunto de $A$, diremos que la aplicación $\maps{f}{A}{B}$ deja invariante a $C$ si $f(C)=C$.
@@ -6,19 +6,19 @@ Cuando $C=A$ diremos que la simetría es global, en caso contrario diremos que l
 
 Para el caso que nos ocupa en este tema, lo que nos interesa son las simetrías que dejan invariantes las ecuaciones del movimiento, y como hemos visto en~\eqref{po:pma}, estas ecuaciones están caracterizadas por el principio de mínima acción, es decir, por aquellas soluciones que minimizan la acción sobre el Lagrangiano, por lo cual, el objeto de nuestro interés, son aquellas simetrías $\maps{f}{\R^n}{\R^n}$ tales que $dS_{\lagrangiano}(\alpha)=dS_{\lagrangiano}(f(\alpha))$.
 
-\subsection{Carga de Noether}\label{sec:carga-de-noether}
+\subsection{Carga de Noether}\label{subsec:carga-de-noether}
 Para entender bien el primer teorema de Noether, y sobre todo, para poder entender la relación entre simetrías y conservación de cantidades, que se verán más adelante, es necesario presentar el concepto de la carga de Noether.
 
 Tenemos un sistema físico, con un Lagrangiano $\lagrangiano$ y $\maps{\alpha,\beta}{I=[t_0, t_1]}{\R^n}$ dos funciones, tales que los lagrangianos para ambas funciones están relacionados por una tercera función $f$ real que cumple $\lagrangiano(\beta, \dot{\beta}, t) = \lagrangiano(\alpha, \dot{\alpha}, t)+\dot{f}$.
 Entonces las respectivas acciones están relacionadas por una constante, pues:
 \begin{equation}
-	\label{eq:variacion-accion}
+	\label{eq:variación-acción}
 	S_\lagrangiano(\beta) = \int_I \lagrangiano(\beta, \dot{\beta}, t) dt = \int_I \lagrangiano(\alpha, \dot{\alpha}, t)\ dt+\int_I \dot{f}dt=S_\lagrangiano(\alpha) +[f]_{t_0}^{t_1}
 \end{equation}
 
 Y en este caso, la diferencia entre las acciones es:
 \begin{equation}
-	\label{eq:variacion-accion-relacion}
+	\label{eq:variación-acción-relación}
 	S_\lagrangiano(\beta) - S_\lagrangiano(\alpha) = f(t_1) - f(t_0)
 \end{equation}
 Como la diferencia entre las acciones es una constante, sus diferenciales son iguales, y por tanto si $\alpha$ es una trayectoria, también lo es $\beta$ y además, al cumplir con la ecuación de Euler-Lagrange, tenemos que:
@@ -26,7 +26,7 @@ Como la diferencia entre las acciones es una constante, sus diferenciales son ig
 	\label{eq:diferencial_trayectoria}
 	\begin{split}
 	[f]_{t_0}^{t_1} & = S_\lagrangiano(\beta) - S_\lagrangiano(\alpha) = S_\lagrangiano(\alpha + (\beta-\alpha))-S_\lagrangiano(\alpha)=dS_\lagrangiano(\alpha)(\beta-\alpha)=\\
-	&\by{\ref{eq:accion_diferencial}} \int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}(\beta-\alpha)+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\dot{\beta}-\dot{\alpha})\right) dt = \\
+	&\by{\ref{eq:acción-diferencial}} \int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}(\beta-\alpha)+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\dot{\beta}-\dot{\alpha})\right) dt = \\
 	&\by{\ref{eq:euler-lagrange}} \int_{I}\left( \frac{d}{dt}\left(\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\right)(\beta-\alpha)+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\dot{\beta}-\dot{\alpha})\right) dt=\\
 	&= \int_{I}\frac{d}{dt}\left(\frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha)\right) dt = \frac{\partial \lagrangiano}{\partial\dot{\alpha}}(\beta-\alpha) + \text{ cte }
 	\end{split}
@@ -45,7 +45,7 @@ Es decir, que para trayectorias cuyos lagrangianos se diferencia por la diferenc
 	\end{equation}
 \end{definition}
 
-\subsection{Primer teorema de Noether}\label{sec:primer-teorema-de-noether}
+\subsection{Primer teorema de Noether}\label{subsec:primer-teorema-de-noether}
 
 Llegado a este punto, ya estamos en condiciones de enunciar el primer teorema de Noether.
 No vamos a enunciarlo tal y como se publicó, sino una versión más sencilla de entender, para consultar la versión original remitimos a su lectura en la versión traducida del alemán al inglés de~\cite{Noether1971}.

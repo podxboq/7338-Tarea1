@@ -1,20 +1,21 @@
-\section{Mecánica Lagrangiana}\label{ch:mecanica-lagrangiana}
-Para poder entender el Teorema de Noether, piedra angular en el estudio de las simetrías, es preciso conocer primero un concepto propio de la física denominado \textquotedblleft Mecánica Lagrangiana\textquotedblright.
+\section{Mecánica Lagrangiana}\label{sec:mecánica-lagrangiana}
+Para poder entender el Teorema de Noether, piedra angular en el estudio de las simetrías, es preciso conocer primero un concepto propio de la física denominado ``Mecánica Lagrangiana''.
 
 A partir de la formulación de las leyes del movimiento de Newton, los sistemas físicos se estudiaban mediante la posición de los elementos que los componen (coordenadas x, y, z; ángulos y módulos en el caso de coordenadas polares; etc) y sus interacciones.
 Sin embargo, esto suponía que su análisis se volviera demasiado complejo en determinadas situaciones.
 
 Así, en 1788, el matemático Joseph-Louis Lagrange, desarrolló una manera de describir la mecánica que suponía una simplificación del estudio en gran cantidad de escenarios. Este modelo se basa en la ecuación de Euler-Lagrange que explicamos a continuación.
-\subsection{Ecuación de Euler-Lagrange}\label{sec:ecuacion-de-euler-lagrange}
-En la mayoría de los casos, a la hora de estudiar un sistema físico, podemos centrarnos exclusivamente en las variaciones (modificaciones) que ocurren en el mismo. Mediante el "\define{Cálculo Variacional}{Cálculo Variacional}", que es un campo de las matemáticas que se ocupa de estudiar un sistema funcional a través de los máximos y mínimos de sus funciones, podemos obtener la información necesaria para comprender los cambios de un sistema determinado.
 
-El problema del llamado "Principio Variacional" surge en la historia de las matemáticas a través del estudio del problema de la "\define{Curva Braquistócrona}{Curva Braquistócrona}" (del griego bráchystos, brevísimo y chronos, tiempo), planteado inicialmente por Johann Bernoulli en 1696 \cite{AE}.
+\subsection{Ecuación de Euler-Lagrange}\label{subsec:ecuación-de-euler-lagrange}
+En la mayoría de los casos, a la hora de estudiar un sistema físico, podemos centrarnos exclusivamente en las variaciones (modificaciones) que ocurren en el mismo. Mediante el ``\define{Cálculo Variacional}{Cálculo Variacional}'', que es un campo de las matemáticas que se ocupa de estudiar un sistema funcional a través de los máximos y mínimos de sus funciones, podemos obtener la información necesaria para comprender los cambios de un sistema determinado.
+
+El problema del llamado ``Principio Variacional'' surge en la historia de las matemáticas a través del estudio del problema de la ``\define{Curva Braquistócrona}{Curva Braquistócrona}'' (del griego bráchystos, brevísimo y chronos, tiempo), planteado inicialmente por Johann Bernoulli en 1696~\cite{AE}.
 
 Si consideramos un sistema sometido a fuerzas gravitatorias y en el que hay dos puntos a distinta altura, se llama Curva Braquistócrona, a aquella que hace que el tiempo que tarda un cuerpo inicialmente parado que está situado en el punto más alto (al que llamaremos A), en llegar al punto más bajo (B), sea mínimo.
 
 Intuitivamente podría parecer que la función que cumple esto sería la línea recta, pero demostraremos a continuación que esto no es así. Veamos un esquema del problema:
 
-\begin{figure}[H]
+\begin{figure*}[H]
 	\centering
 	\begin{tikzpicture}
 		\draw (0,0) -- (xyz cs:x=6);
@@ -25,10 +26,10 @@ Intuitivamente podría parecer que la función que cumple esto sería la línea 
 		\draw (1.1,5) .. controls (3,4) .. (4.9,1);
 		\draw (1.1,5) .. controls (3,1) .. (4.9,1);
 	\end{tikzpicture}
-	\caption{Ejemplo de posibles caminos entre dos puntos.}\label{pic:braquistocrona}
-\end{figure}
+	\caption{Ejemplo de posibles caminos entre dos puntos.}
+\end{figure*}
 
-Supongamos que la curva está definida por un funcional $\lagrangiano$ que depende de la posición, velocidad de los objetos del sistema y del tiempo. Entonces nuestro problema consiste en reducir el tiempo que se tarda en llegar de $A$ a $B$, o lo que es lo mismo:
+El primer paso es parametrizar el problema en base a las posición y velocidad que se obtiene en los distintos caminos que podemos elegir para llegar de A a B\@. Llamaremos $\lagrangiano$ a dicha parametrización, de esta manera el problema variacional pasa por considerar las curvas estacionarias de la siguiente integral que llamamos \define{integral de acción}{Integral de acción} o simplemente \define{acción}{Acción}:
 \begin{equation}
 	\label{eq:accion}
 	S_\lagrangiano(\alpha) = \int_{I}\lagrangiano(\alpha(t), \dot{\alpha}(t), t)\ dt
@@ -36,13 +37,17 @@ Supongamos que la curva está definida por un funcional $\lagrangiano$ que depen
 
 Siendo $\maps{\alpha}{I=[t_0, t_1]}{\R^3}$ una función que representa el movimiento de una partícula.
 
-Esta expresión se conoce como la \define{integral de acción}{integral de acción} o simplemente \define{acción}{acción}. Una condición necesaria es que dicha función sea estacionaria.
-
 En 1750, Leonhard Euler y Joseph-Louis Lagrange, encontraron una solución para esto.
 
-Consideremos una curva aleatoria, que pasa por $A$ y por $B$ distinta a la trayectoria que buscamos. Definimos $h(x) = h$ como la diferencia entre ambas curvas. Por la definición de diferencial tenemos que para cualquier función $h$
+Consideremos una curva aleatoria $\beta$, que empieza en $A$ y termina en $B$ distinta a la curva $\alpha$ que buscamos. Definimos $h(t) = \beta(t)-\alpha(t)$ como la diferencia entre ambas curvas. Así $h$ tiene que cumplir que
+\begin{equation}
+	\label{eq:extremos_h}
+	h(t_0)=h(t_1)=0
+\end{equation}
+
+Por la definición de diferencial~\cite{FV} tenemos que.
 \begin{equation*}
-	S_\lagrangiano(\alpha + h) -  S_\lagrangiano(\alpha) = dS_\lagrangiano(\alpha)(h) +\mathcal{O}(h^2)
+	S_\lagrangiano(\beta) -  S_\lagrangiano(\alpha) = S_\lagrangiano(\alpha + h) -  S_\lagrangiano(\alpha) = dS_\lagrangiano(\alpha)(h) +\mathcal{O}(h^2)
 \end{equation*}
 Por otra parte y por la definición de la acción
 \begin{equation*}
@@ -55,62 +60,56 @@ Por otra parte y por la definición de la acción
 
 Donde en la última igualdad hemos usado el desarrollo de Taylor en una variable.
 Por lo tanto, por la unicidad de diferencial de funciones, tenemos que:
-
 \begin{equation}
-	\label{eq:accion_diferencial}
+	\label{eq:acción-diferencial}
 	dS_\lagrangiano(\alpha)(h)=\int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}h+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\dot{h}\right) dt
 \end{equation}
 
-
-Una función alcanza un valor máximo o mínimo en el funcional $S_L$ cuando su diferencial se hace cero, es decir, que $dS_\lagrangiano(\alpha)(h)=0$ para cualquier función $h$.
-\begin{equation*}
+Una función alcanza un valor máximo o mínimo en el funcional $S_\lagrangiano$ cuando su diferencial se hace cero, es decir, que $dS_\lagrangiano(\alpha)(h)=0$ para cualquier función $h$.
+\begin{equation}
 	\label{eq:premisa_euler_lagrange}
-	\begin{split}
-		0 = dS_\lagrangiano(\alpha)(h)~\by{\ref{eq:accion_diferencial}}&\int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}h+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\dot{h}\right) dt
-	\end{split}
-\end{equation*}
+		0 = dS_\lagrangiano(\alpha)(h)~\by{\ref{eq:acción-diferencial}} \int_{I}\left( \frac{\partial \lagrangiano}{\partial\alpha}h+\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\dot{h}\right) dt
+\end{equation}
 
 Si integramos por partes el sumando de la derecha de la integral:
-\begin{equation}
-	\left[ \frac{\partial \lagrangiano}{\partial \dot{\alpha}}h \right]_{t_0}^{t_1}  - \int_I h \frac{d}{dt}\frac{\partial\lagrangiano}{\partial\dot\alpha} dt
-\end{equation}
-
-Dado que una premisa es que la curva aleatoria escogida, pase por $A$ y por $B$, nos restringimos a las funciones $h$ que cumplen $h(t_0)=0=h(t_1)$, entonces, el primer sumando vale $0$. Sustituimos el segundo sumando en \eqref{eq:premisa_euler_lagrange}:
-\begin{equation}
-	0 = \int_{I}\left(\frac{\partial \lagrangiano}{\partial\alpha}h + \frac{d}{dt}\frac{\partial\lagrangiano}{\partial\dot\alpha}h \right)dt = \int_{I}\left(\frac{\partial \lagrangiano}{\partial\alpha} + \frac{d}{dt}\frac{\partial\lagrangiano}{\partial\dot\alpha} \right) h dt
-\end{equation}
-
-Como $h \neq 0$:
 \begin{equation*}
-	\int_{I}\left( \frac{\partial \lagrangiano}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)\right)h\ dt = 0 \so \frac{\partial \lagrangiano}{\partial \alpha}-\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right) = 0
+	\int_{I}\frac{\partial \lagrangiano}{\partial\dot{\alpha}}\dot{h}\ dt = \left[ \frac{\partial \lagrangiano}{\partial \dot{\alpha}}h \right]_{t_0}^{t_1}  - \int_I h \frac{d}{dt}\left( \frac{\partial\lagrangiano}{\partial\dot\alpha}\right)\ dt
 \end{equation*}
 
-Por tanto, tenemos que una función real $\alpha$ alcanza un valor extremo (máximo o mínimo) en el funcional $S_L$ sí y sólo sí se da la siguiente igualdad llamada \define{ecuación de Euler-Lagrange}{Ecuación de Euler-Lagrange}
+Por la condición~\eqref{eq:extremos_h} el primer sumando vale $0$ y sustituyendo el segundo sumando en~\eqref{eq:premisa_euler_lagrange}:
+\begin{equation*}
+	0 = \int_{I}\left(\frac{\partial \lagrangiano}{\partial\alpha}h - \frac{d}{dt}\left(\frac{\partial\lagrangiano}{\partial\dot\alpha}\right)h\right)dt = \int_{I}\left(\frac{\partial \lagrangiano}{\partial\alpha} - \frac{d}{dt}\left( \frac{\partial\lagrangiano}{\partial\dot\alpha}\right)\right)\ h\ dt
+\end{equation*}
+
+Como $h \neq 0$ para cualquier construcción posible que hagamos, tenemos que el factor del paréntesis debe ser cero.
+
+Por tanto, tenemos que una función real $\alpha$ alcanza un valor extremo (máximo o mínimo) en el funcional $S_\lagrangiano$ sí se da la siguiente igualdad llamada \define{ecuación de Euler-Lagrange}{Ecuación de Euler-Lagrange}
 \begin{equation}
 	\label{eq:euler-lagrange}
 	\frac{\partial \lagrangiano}{\partial \alpha}=\frac{d}{dt}\left( \frac{\partial \lagrangiano}{\partial \dot{\alpha}} \right)
 \end{equation}
 
-\subsection{El lagrangiano del sistema}\label{sec:el-lagrangiano-del-sistema}
-En la mecánica lagrangiana, para cada partícula del sistema se consideran los valores que definen su posición, dichos valores reciben el nombre de \define{coordenadas generalizadas}{Coordenadas generalizadas}~\cite{GTP}.
-Llamamos \define{velocidades generalizadas}{Velocidades generalizadas} a la derivada respecto del tiempo de las coordenadas generalizadas.
+\subsection{El lagrangiano del sistema}\label{subsec:el-lagrangiano-del-sistema}
+En mecánica lagrangiana, se considera el conjunto de $N$ parámetros que caracteriza la posición de sus elementos, estos parámetros reciben el nombre de \define{coordenadas generalizadas}{Coordenadas generalizadas}~\cite{GTP} y se denota por $q_i\ \forall\ i=1\dots N$.
 
-En un sistema de $N$ partículas, tendremos para cada partícula, $n$ coordenadas generalizadas, denotamos por $q_i,\ i=1\dots N$ al vector formado por las coordenadas generalizadas de cada partícula y por $q=(q_1,\dots,q_N)$ al vector de las coordenadas generalidas del sistema.
-Observamos que la dimensión de $q$ es $nN$.
+Llamamos \define{velocidades generalizadas}{Velocidades generalizadas} a la derivada respecto del tiempo de las coordenadas generalizadas, que denotaremos como $\dot{q_i}\ \forall\ i=1\dots N$.
+
+Vamos a restringirnos al caso de una única coordenada general, para simplificar la notación, podemos consultar el caso general en~\cite{Goldstein}.
 
 Se define el \define{lagrangiano}{Lagrangiano} $\lagrangiano$, como la aplicación escalar que se forma mediante la energía cinética ($T$) y la energía potencial ($V$) de tal manera que:
 \begin{equation}
-	\label{eq:lagrangiano_clasico}
-	\lagrangiano(q,\dot{q},t)=T-V=\sum\limits_{i=1}^{N} \frac{1}{2}m\|\dot{q_i}\|^2-V(q_i,t)
+	\label{eq:lagrangiano-clásico}
+	\lagrangiano(q,\dot{q},t)=T-V=\sum\limits_{i=1}^{N} \frac{1}{2}m\dot{q}^2-V(q,t)
 \end{equation}
 
-Ahora, podemos expresar como depende la energía del sistema en función del lagrangiano, para ello, vamos a considerar un sistema físico con una sola partícula, pues el desarrollo para $N$ partículas es directo, observemos que:
-\begin{equation*}
-	\frac{\partial\lagrangiano}{\partial\dot{q}}\by{\ref{eq:lagrangiano_clasico}}m\dot{q}\so \frac{\partial\lagrangiano}{\partial\dot{q}}\dot{q} =m\dot{q}^2 = 2K
-\end{equation*}
+Ahora, podemos expresar como depende la energía del sistema en términos del lagrangiano, para ello, vamos a considerar un sistema físico con una sola partícula, pues el desarrollo para $N$ partículas es directo, observemos que:
+\begin{equation}
+	\label{eq:2t}
+	\frac{\partial\lagrangiano}{\partial\dot{q}}\by{\ref{eq:lagrangiano-clásico}}m\dot{q}\so \frac{\partial\lagrangiano}{\partial\dot{q}}\dot{q} =m\dot{q}^2 = 2T
+\end{equation}
 
 Por lo tanto:
 \begin{equation}
-	\label{eq:energia-lagrangiana}
-	E=K+T=K+T+K-K=2K-\lagrangiano=\frac{\partial\lagrangiano}{\partial\dot{q}}\dot{q}-\lagrangiano
+	\label{eq:energía-lagrangiana}
+	E=T+V=T+V+T-T=2T-\lagrangiano\by{\ref{eq:2t}}\frac{\partial\lagrangiano}{\partial\dot{q}}\dot{q}-\lagrangiano
 \end{equation}

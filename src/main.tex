@@ -3,7 +3,6 @@
 
 % Packages
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{csquotes}
 \usepackage{amsmath}
@@ -13,9 +12,10 @@
 \usepackage{imakeidx}
 \usepackage{tikz}
 \usepackage{float}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage[authordate,backend=biber]{biblatex-chicago}
 \usepackage{biblatex}
+\usepackage{graphicx}
 \bibliography{main}
 \input{personalizacion.tex}
 \setmainfont{Calibri}
@@ -27,9 +27,9 @@
 % Document
 \makeindex
 \begin{document}
-	\title{La importancia de las simetrías en física}
-	\author{Francisco Costa y Francisco Vidal\\
-	\small{Master en computación cuántica}}
+	\title{\includegraphics[scale=0.75]{logo}\\La importancia de las simetrías en física}
+	\author{Francisco Costa Cano y Francisco Vidal Requejo\\
+	Escuela superior de Ingeniería y Tecnología\\Master en computación cuántica}
 	\date{Octubre 2022}
 	\maketitle
   \include{abstract}

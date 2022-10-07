@@ -1,7 +1,6 @@
-\section{Simetrías y cantidades conservadas en física clásica}\label{sec:simetrías-y-cantidades-conservadas-en-física-clásica}
+\section{Simetrías en física clásica}\label{sec:simetrías-y-cantidades-conservadas-en-física-clásica}
 
 \subsection{Simetrías y cantidades conservadas}\label{subsec:simetrías-y-cantidades-conservadas}
-
 Las leyes de conservación son fundamentales para entender los procesos físicos y nos permiten comprender como evolucionan los sistemas.
 
 Cuando el lagrangiano de un sistema presenta simetría en una transformación $\sigma$, éste se mantiene invariante tras aplicar dicha transformación, y por tanto, estamos en condiciones de aplicar el teorema de Noether~\eqref{thm:noether} y afirmar que la carga de Noether de $\alpha$ a $\sigma(\alpha)$ es constante.
@@ -33,13 +32,10 @@ Por el teorema de Noether~\eqref{thm:noether}, la carga de Noether es
 Por tanto, podemos asegurar, que si en nuestro sistema físico no existe una dirección privilegiada (isotropía del espacio), entonces el momento angular se conserva.
 
 \subsection{Homogeneidad del tiempo y conservación de la energía}\label{subsec:homogeneidad-del-tiempo-y-conservación-de-la-energía}
-
-
-
 Es lógico pensar que las leyes de la física no cambien con el tiempo, por eso, el lagrangiano de un sistema no puede depender explícitamente del tiempo, así pues, debemos tener que $\frac{d\lagrangiano}{dt}=0$.
 Por lo tanto tenemos:
 \begin{align*}
 	0 & = \frac{d\lagrangiano}{dt}=\frac{\partial \lagrangiano}{\partial \alpha}\frac{d\alpha}{dt}+\frac{\partial \lagrangiano}{\partial \dot{\alpha}}\frac{d\dot{\alpha}}{dt} ~\by{\ref{eq:euler-lagrange}} \frac{d}{dt}\left(\frac{\partial \lagrangiano}{\partial \dot{\alpha}}\right)\dot{\alpha}+\frac{\partial \lagrangiano}{\partial \dot{\alpha}}\frac{d\dot{\alpha}}{dt}=\\
 	& = \frac{d}{dt}\left(\frac{\partial \lagrangiano}{\partial \dot{\alpha}}\dot{\alpha}\right)\by{\ref{eq:energía-lagrangiana}}\frac{d\left(E+\lagrangiano\right)}{dt}=\frac{d E}{dt}+\frac{d\lagrangiano}{dt}=\frac{d E}{dt}
 \end{align*}
-Tenemos que la la energía no varía con el tiempo.
+Tenemos que la energía no varía con el tiempo.

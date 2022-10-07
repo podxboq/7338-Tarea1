@@ -4,10 +4,10 @@ Para poder entender el Teorema de Noether, piedra angular en el estudio de las s
 A partir de la formulación de las leyes del movimiento de Newton, los sistemas físicos se estudiaban mediante la posición de los elementos que los componen (coordenadas x, y, z; ángulos y módulos en el caso de coordenadas polares; etc) y sus interacciones.
 Sin embargo, esto suponía que su análisis se volviera demasiado complejo en determinadas situaciones.
 
-Así, en 1788, el matemático Joseph-Louis Lagrange, desarrolló una manera de describir la mecánica que suponía una simplificación del estudio en gran cantidad de escenarios. Este modelo se basa en la ecuación de Euler-Lagrange que explicamos a continuación.
+Así, en 1788, el matemático Joseph-Louis Lagrange, desarrolló una mecánica que suponía una simplificación del estudio en gran cantidad de escenarios. Este modelo se basa en la ecuación de Euler-Lagrange que explicamos a continuación.
 
 \subsection{Ecuación de Euler-Lagrange}\label{subsec:ecuación-de-euler-lagrange}
-En la mayoría de los casos, a la hora de estudiar un sistema físico, podemos centrarnos exclusivamente en las variaciones (modificaciones) que ocurren en el mismo. Mediante el ``\define{Cálculo Variacional}{Cálculo Variacional}'', que es un campo de las matemáticas que se ocupa de estudiar un sistema funcional a través de los máximos y mínimos de sus funciones, podemos obtener la información necesaria para comprender los cambios de un sistema determinado.
+En la mayoría de los casos, a la hora de estudiar un sistema físico, podemos centrarnos exclusivamente en las variaciones (modificaciones) que ocurren en él mismo. Mediante el ``\define{Cálculo Variacional}{Cálculo Variacional}'', que es un campo de las matemáticas que se ocupa de estudiar un sistema funcional a través de los máximos y mínimos de sus funciones, podemos obtener la información necesaria para comprender los cambios de un sistema determinado.
 
 El problema del llamado ``Principio Variacional'' surge en la historia de las matemáticas por el planteamiento inicial de Johann Bernoulli, a través del estudio del problema de la ``\define{Curva Braquistócrona}{Curva Braquistócrona}'' (del griego bráchystos, brevísimo y chronos, tiempo)~\cite{AE}.
 
@@ -15,7 +15,7 @@ Si consideramos un sistema sometido a fuerzas gravitatorias y en el que hay dos 
 
 Intuitivamente podría parecer que la función que cumple esto sería la línea recta, pero demostraremos a continuación que esto no es así. Veamos un esquema del problema:
 
-\begin{figure*}[H]
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
 		\draw (0,0) -- (xyz cs:x=6);
@@ -27,7 +27,7 @@ Intuitivamente podría parecer que la función que cumple esto sería la línea 
 		\draw (1.1,5) .. controls (3,1) .. (4.9,1);
 	\end{tikzpicture}
 	\caption{Ejemplo de posibles caminos entre dos puntos.}
-\end{figure*}
+\end{figure}
 
 El primer paso es parametrizar el problema en base a las posición y velocidad que se obtiene en los distintos caminos que podemos elegir para llegar de A a B\@. Llamaremos $\lagrangiano$ a dicha parametrización, de esta manera el problema variacional pasa por considerar las curvas estacionarias de la siguiente integral que llamamos \define{integral de acción}{Integral de acción} o simplemente \define{acción}{Acción}:
 \begin{equation}
@@ -44,7 +44,6 @@ Consideremos una curva aleatoria $\beta$, que empieza en $A$ y termina en $B$ di
 	\label{eq:extremos_h}
 	h(t_0)=h(t_1)=0
 \end{equation}
-
 Por la definición de diferencial~\cite{FV} tenemos que.
 \begin{equation*}
 	S_\lagrangiano(\beta) -  S_\lagrangiano(\alpha) = S_\lagrangiano(\alpha + h) -  S_\lagrangiano(\alpha) = dS_\lagrangiano(\alpha)(h) +\mathcal{O}(h^2)
